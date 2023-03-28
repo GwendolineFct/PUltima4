@@ -113,6 +113,10 @@ class Avatar:
         self.console.print("What ?\n")
         return self.end_turn()
 
+    def do_cannot(self):
+        self.console.print("cannot ?\n")
+        return self.end_turn()
+
     def do_pass(self):
         self.console.print("Pass\n")
         return self.end_turn()
@@ -140,8 +144,9 @@ class Avatar:
                 self.party.x %= self.map.width
                 self.party.y %= self.map.height
             elif (self.party.x, self.party.y) not in self.map:
-                self.console.print("Leaving").newline()
+                self.console.print("Leaving...").newline()
                 self.map = self.world_map
+                self.party.location = LOC_BRITANNIA
                 self.party.x = globals.avatar_exe.locations_x[self.party.location]
                 self.party.y = globals.avatar_exe.locations_y[self.party.location]
 
@@ -195,7 +200,7 @@ class Avatar:
         return self.do_move(-1, 0, "West")
 
     def do_enter(self):
-        self.console.print("Enter").newline()
+        self.console.print("Enter ")
         p = -1
         if self.party.location == 0:
             for n in range(32):
@@ -206,9 +211,24 @@ class Avatar:
             p = -1
 
         if p == -1:
-            return self.cant()
+            return self.do_what()
 
-        self.console.print(f" {globals.avatar_exe.location_names[p]}").newline()
+            self.console.print(globals.avatar_exe.location_type[0])
+        if p <= LOC_SERPENTS_HOLD:
+            self.console.print(globals.avatar_exe.location_types[2])
+        elif p <= LOC_SKARA_BRAE:
+            self.console.print(globals.avatar_exe.location_types[3])
+        elif p <= LOC_MAGINCIA:
+            self.console.print(globals.avatar_exe.location_types[4])
+        elif p <= LOC_COVE:
+            self.console.print(globals.avatar_exe.location_types[1])
+        elif p <= LOC_ABBYSS:
+            self.console.print(globals.avatar_exe.location_types[0])
+        else:
+            self.console.print(globals.avatar_exe.location_types[5])
+
+        self.console.print(globals.avatar_exe.location_names[p]).newline().newline()
+
         self.map = TownMap(globals.avatar_exe.ult_filenames[p])
         self.party.location = p
         if self.party.location < 4:
