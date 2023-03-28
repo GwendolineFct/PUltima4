@@ -2,6 +2,7 @@ from io import BufferedReader
 import os
 from zipfile import ZipFile
 from lzw import lzw_decompress
+import hashlib
 
 def read_file(filename: str) -> bytes:
     filename = filename.upper()
@@ -34,6 +35,9 @@ class DosFile:
     def __init__(self, path):
         self._bytes = read_file(path)
         self._len = len(self._bytes)
+
+    def get_sha256(self):
+        return hashlib.sha256(self._bytes).hexdigest()
 
     def seek(self, offset) -> None:
         self._pos = min(self._len, max(offset, 0))

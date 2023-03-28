@@ -1,5 +1,6 @@
 from enum import Enum
 
+AVATAR_EXE_SHA256 = 0
 DIR_WEST = 0
 DIR_NORTH = 1
 DIR_EAST = 2

@@ -11,6 +11,7 @@ class AvatarExe:
 
     def __init__(self) -> None:
         bin = DosFile("AVATAR.EXE")
+        print(bin.get_sha256())
         self.ult_filenames = bin.read_n_asciiz(16, 0x0f97f)
         self.stone_colors = bin.read_n_asciiz(16, 0x0fa2a)
         self.dng_filenames = bin.read_n_asciiz(16, 0x0fa5a)
