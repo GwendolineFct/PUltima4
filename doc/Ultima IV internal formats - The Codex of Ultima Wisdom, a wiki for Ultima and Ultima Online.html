@@ -1,0 +1,5772 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats -->
+<html class="client-js" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Ultima&nbsp;IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online</title>
+<link rel="stylesheet" href="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/load.php">
+<link rel="stylesheet" href="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/load(1).php">
+<!--[if lt IE 9]><link rel="stylesheet" href="/skins/MonoBook/resources/screen-desktop.css?d010f" media="screen"/><![endif]--><style>#mw-indicator-mw-helplink {display:none;}</style>
+<style>
+@media screen and (max-width: 550px) {
+	#sidebar .generated-sidebar,#p-search-mobilejs,#p-tb-mobilejs,#p-lang-mobilejs,#t-contributions{display:none}#p-cactions,#p-personal,#p-tb,#p-lang,#sidebar-mobilejs{position:absolute;top:-9999px;left:0}#p-cactions.mobile-menu-active,#p-personal.mobile-menu-active,#p-tb.mobile-menu-active,#p-lang.mobile-menu-active,#sidebar-mobilejs.mobile-menu-active{top:2em;left:0}.mobile-menu-active{position:absolute;z-index:10000;background:#ffffff;border:solid 1px #fabd23;border-left:0;padding:2em 2em 0 1.5em;font-size:125%}.mobile-menu-active *[id^='ca-nstab-'],.mobile-menu-active #ca-talk,.mobile-menu-active #ca-edit{position:absolute;top:-9999px;left:0}.mobile-menu-active ul{padding-top:1em}.mobile-menu-active li{white-space:nowrap}.mobile-menu-active a{display:block;padding:0.65em 0}.mobile-menu-active h3:first-child{margin-right:2em}.mobile-menu-active .pBody{margin-bottom:2em}.mobile-menu-active .mobile-close-button{width:20px;height:20px;background-image:url(/skins/MonoBook/resources/images/icon-close.gif?9a868);background-image:linear-gradient(transparent,transparent),url(/skins/MonoBook/resources/images/icon-close.svg?a9af1);background-position:0 0;background-repeat:no-repeat;position:absolute;top:1em;right:0.75em;cursor:pointer}.menus-cover{display:none;top:0;left:0;width:100%;height:100%;z-index:9999}.menus-cover.visible{display:block}#menus-cover{position:fixed;opacity:0.45;background-color:#ffffff}#menus-cover-background{position:absolute;background-color:#f9f9f9;background-image:url(/skins/MonoBook/resources/images/headbg.jpg?78766);background-image:linear-gradient(transparent,transparent),url(/skins/MonoBook/resources/images/headbg.svg?0be07);background-position:0 0;background-repeat:no-repeat;opacity:0.55}#p-cactions-mobile li#ca-edit-mobile a{background-image:url(/skins/MonoBook/resources/images/icon-edit.gif?a6fe6);background-image:linear-gradient(transparent,transparent),url(/skins/MonoBook/resources/images/icon-edit.svg?badf7)}#p-cactions-mobile li#t-contributions-mobile a{background-image:url(/skins/MonoBook/resources/images/icon-user.gif?d13ac);background-image:linear-gradient(transparent,transparent),url(/skins/MonoBook/resources/images/icon-user.svg?9bf49)}}
+@media screen {
+	body{margin:0}main{display:block}hr{box-sizing:content-box;height:0;overflow:visible}abbr[title]{border-bottom:1px dotted;cursor:help}@supports (text-decoration:underline dotted){abbr[title]{border-bottom:0;text-decoration:underline dotted}}pre,code,tt,kbd,samp{font-family:monospace,monospace}sub,sup{line-height:1}img{border:0}button::-moz-focus-inner,[type='button']::-moz-focus-inner,[type='reset']::-moz-focus-inner,[type='submit']::-moz-focus-inner{border-style:none;padding:0}legend{color:inherit;padding:0}   a{text-decoration:none;color:#0645ad;background:none}a:not([href]){cursor:pointer; }a:visited{color:#0b0080}a:active{color:#faa700}a:hover,a:focus{text-decoration:underline}a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.stub{color:#723}a.new,#p-personal a.new{color:#d33} a.mw-selflink{color:inherit;font-weight:bold;text-decoration:inherit}a.mw-selflink:hover{cursor:inherit;text-decoration:inherit}a.mw-selflink:active,a.mw-selflink:visited{color:inherit}a.new:visited,#p-personal a.new:visited{color:#a55858} .mw-parser-output a.extiw,.mw-parser-output a.external{color:#36b}.mw-parser-output a.extiw:visited,.mw-parser-output a.external:visited{color:#636; }.mw-parser-output a.extiw:active,.mw-parser-output a.external:active{color:#b63}.mw-parser-output a.external.free{word-wrap:break-word} img{border:0; vertical-align:middle}hr{height:1px;background-color:#a2a9b1;border:0;margin:0.2em 0} h1,h2,h3,h4,h5,h6{color:#000;margin:0;padding-top:0.5em;padding-bottom:0.17em;overflow:hidden}h1,h2{margin-bottom:0.6em;border-bottom:1px solid #a2a9b1}h3,h4,h5{margin-bottom:0.3em}h1{font-size:188%;font-weight:normal}h2{font-size:150%;font-weight:normal}h3{font-size:128%}h4{font-size:116%}h5{font-size:108%}h6{font-size:100%}p{margin:0.4em 0 0.5em 0}p img{margin:0}ul{margin:0.3em 0 0 1.6em;padding:0}ol{margin:0.3em 0 0 3.2em;padding:0;list-style-image:none}li{margin-bottom:0.1em}dt{font-weight:bold;margin-bottom:0.1em}dl{margin-top:0.2em;margin-bottom:0.5em}dd{margin-left:1.6em;margin-bottom:0.1em} pre,code,tt,kbd,samp,.mw-code{ font-family:monospace,monospace}code{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;border-radius:2px;padding:1px 4px}pre,.mw-code{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;padding:1em; white-space:pre-wrap; overflow-x:hidden; word-wrap:break-word} table{font-size:100%} fieldset{border:1px solid #2a4b8d;margin:1em 0 1em 0;padding:0 1em 1em}legend{padding:0.5em;font-size:95%}form{border:0;margin:0}textarea{width:100%;padding:0.1em;display:block;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box} .center{width:100%;text-align:center}*.center *{margin-left:auto;margin-right:auto} .small{font-size:94%}table.small{font-size:100%}   .toc,.mw-warning,.toccolours{border:1px solid #a2a9b1;background-color:#f8f9fa;padding:5px;font-size:95%} .toc{display:table;padding:7px} table.toc{border-collapse:collapse} table.toc td{padding:0}.toc h2{display:inline;border:0;padding:0;font-size:100%;font-weight:bold}.toc .toctitle{text-align:center}.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding:0;text-align:left}.toc ul ul{margin:0 0 0 2em} .tocnumber,.toctext{display:table-cell; text-decoration:inherit} .tocnumber{color:#202122;padding-left:0;padding-right:0.5em} .mw-content-ltr .tocnumber{padding-left:0;padding-right:0.5em} .mw-content-rtl .tocnumber{padding-left:0.5em;padding-right:0} .mw-warning{margin-left:50px;margin-right:50px;text-align:center}  div.floatright,table.floatright{margin:0 0 0.5em 0.5em} div.floatleft,table.floatleft{margin:0 0.5em 0.5em 0} div.thumb{margin-bottom:0.5em;width:auto;background-color:transparent}div.thumbinner{border:1px solid #c8ccd1;padding:3px;background-color:#f8f9fa;font-size:94%;text-align:center; overflow:hidden}html .thumbimage{background-color:#fff;border:1px solid #c8ccd1}html .thumbcaption{border:0;line-height:1.4em;padding:3px;font-size:94%; text-align:left}.magnify{ float:right;margin-left:3px}.magnify a{display:block; text-indent:15px;white-space:nowrap;overflow:hidden; width:15px;height:11px;  background-image:url(resources/src/mediawiki.skinning/images/magnify-clip-ltr.png?4f704);background-image:linear-gradient(transparent,transparent),url(resources/src/mediawiki.skinning/images/magnify-clip-ltr.svg?8330e); -moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}img.thumbborder{border:1px solid #eaecf0}  .mw-content-ltr .thumbcaption{text-align:left} .mw-content-ltr .magnify{float:right;margin-left:3px;margin-right:0} .mw-content-ltr .magnify a{ background-image:url(resources/src/mediawiki.skinning/images/magnify-clip-ltr.png?4f704);background-image:linear-gradient(transparent,transparent),url(resources/src/mediawiki.skinning/images/magnify-clip-ltr.svg?8330e)} .mw-content-rtl .thumbcaption{text-align:right} .mw-content-rtl .magnify{float:left;margin-left:0;margin-right:3px} .mw-content-rtl .magnify a{ background-image:url(resources/src/mediawiki.skinning/images/magnify-clip-rtl.png?a9fb3);background-image:linear-gradient(transparent,transparent),url(resources/src/mediawiki.skinning/images/magnify-clip-rtl.svg?38fd5)} div.tright{margin:0.5em 0 1.3em 1.4em} div.tleft{margin:0.5em 1.4em 1.3em 0} body.mw-hide-empty-elt .mw-empty-elt{display:none}   .catlinks{border:1px solid #a2a9b1;background-color:#f8f9fa;padding:5px;margin-top:1em;clear:both}textarea{  border:1px solid #c8ccd1}.editOptions{background-color:#eaecf0;color:#202122;border:1px solid #c8ccd1;border-top:0;padding:1em 1em 1.5em 1em;margin-bottom:2em}.usermessage{background-color:#ffce7b;border:1px solid #ffa500;color:#000;font-weight:bold;margin:2em 0 1em;padding:0.5em 1em;vertical-align:middle}#siteNotice{position:relative;text-align:center;margin:0}#localNotice{margin-bottom:0.9em} #siteSub{display:none}#contentSub,#contentSub2{font-size:84%;line-height:1.2em;margin:0 0 1.4em 1em;color:#54595d;width:auto}span.subpages{display:block} .client-nojs #t-print{display:none; }      .mw-content-ltr{ direction:ltr}.mw-content-rtl{ direction:rtl} .sitedir-ltr textarea,.sitedir-ltr input{ direction:ltr}.sitedir-rtl textarea,.sitedir-rtl input{ direction:rtl}.mw-userlink{word-wrap:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto;unicode-bidi:embed} mark{background-color:#ff0;color:#000}  wbr{display:inline-block}  input[type='submit'],input[type='button'],input[type='reset'],input[type='file']{direction:ltr} textarea[dir='ltr'],input[dir='ltr']{ direction:ltr}textarea[dir='rtl'],input[dir='rtl']{ direction:rtl} abbr[title],.explain[title]{border-bottom:1px dotted;cursor:help}@supports (text-decoration:underline dotted){abbr[title],.explain[title]{border-bottom:0;text-decoration:underline dotted}} span.comment{font-style:italic;unicode-bidi:-moz-isolate;unicode-bidi:isolate} #editform,#toolbar,#wpTextbox1{clear:both} #toolbar{height:22px} .mw-underline-always a{text-decoration:underline}.mw-underline-never a{text-decoration:none} li span.deleted,span.history-deleted{text-decoration:line-through;color:#72777d;font-style:italic} .not-patrolled{background-color:#ffa}.unpatrolled{font-weight:bold;color:#d33}div.patrollink{font-size:75%;text-align:right} td.mw-label{text-align:right;vertical-align:middle}td.mw-input{text-align:left}td.mw-submit{text-align:left;white-space:nowrap}.mw-input-with-label{white-space:nowrap;display:inline-block}  .mw-content-ltr .thumbcaption{text-align:left} .mw-content-ltr .magnify{float:right} .mw-content-rtl .thumbcaption{text-align:right} .mw-content-rtl .magnify{float:left} #catlinks{ text-align:left}.catlinks ul{display:inline;margin:0;padding:0;list-style:none none}.catlinks li{display:inline-block;line-height:1.25em;border-left:1px solid #a2a9b1;margin:0.125em 0;padding:0 0.5em}.catlinks li:first-child{padding-left:0.25em;border-left:0} .catlinks li a.mw-redirect{font-style:italic} .mw-hidden-cats-hidden{display:none}.catlinks-allhidden{display:none} p.mw-protect-editreasons,p.mw-filedelete-editreasons,p.mw-delete-editreasons{font-size:90%;text-align:right} .autocomment,.autocomment a,.autocomment a:visited{color:#72777d} .newpage,.minoredit,.botedit{font-weight:bold} .mw-warning-with-logexcerpt{clear:both}.mw-warning-with-logexcerpt ul li{font-size:90%} span.mw-revdelundel-link,strong.mw-revdelundel-link{font-size:90%}span.mw-revdelundel-hidden,input.mw-revdelundel-hidden{visibility:hidden}td.mw-revdel-checkbox,th.mw-revdel-checkbox{padding-right:10px;text-align:center} a.new{color:#ba0000} .plainlinks a.external{background:none !important; padding:0 !important; }  .rtl a.external.free,.rtl a.external.autonumber{direction:ltr;unicode-bidi:embed} .wikitable{background-color:#f8f9fa;color:#202122;margin:1em 0;border:1px solid #a2a9b1;border-collapse:collapse}.wikitable > tr > th,.wikitable > tr > td,.wikitable > * > tr > th,.wikitable > * > tr > td{border:1px solid #a2a9b1;padding:0.2em 0.4em}.wikitable > tr > th,.wikitable > * > tr > th{background-color:#eaecf0;text-align:center}.wikitable > caption{font-weight:bold} .error,.warning,.success{font-size:larger}.error{color:#d33}.warning{color:#ac6600}.success{color:#14866d} .mw-infobox{border:2px solid #fc3;margin:0.5em;clear:left;overflow:hidden}.mw-infobox-left{margin:7px;float:left;width:35px}.mw-infobox-right{margin:0.5em 0.5em 0.5em 49px} .previewnote{margin-bottom:1em}.visualClear{clear:both} .mw-datatable{border:1px solid #a2a9b1;border-collapse:collapse}.mw-datatable td,.mw-datatable th{border:1px solid #a2a9b1;padding:0.2em 0.4em}.mw-datatable th{background-color:#eaeeff}.mw-datatable td{background-color:#fff}.mw-datatable tr:hover td{background-color:#eaf3ff}.mw-ajax-loader{background-image:url(resources/src/mediawiki.skinning/images/ajax-loader.gif?57f34);background-position:center center;background-repeat:no-repeat;padding:16px;position:relative;top:-16px}.mw-small-spinner{padding:10px !important; margin-right:0.6em;background-image:url(resources/src/mediawiki.skinning/images/spinner.gif?ca65b);background-position:center center;background-repeat:no-repeat} .mw-content-ltr ul,.mw-content-rtl .mw-content-ltr ul{ margin:0.3em 0 0 1.6em;padding:0}.mw-content-rtl ul,.mw-content-ltr .mw-content-rtl ul{ margin:0.3em 1.6em 0 0;padding:0}.mw-content-ltr ol,.mw-content-rtl .mw-content-ltr ol{ margin:0.3em 0 0 3.2em;padding:0}.mw-content-rtl ol,.mw-content-ltr .mw-content-rtl ol{ margin:0.3em 3.2em 0 0;padding:0} .mw-content-ltr dd,.mw-content-rtl .mw-content-ltr dd{margin-left:1.6em;margin-right:0} .mw-content-rtl dd,.mw-content-ltr .mw-content-rtl dd{margin-right:1.6em;margin-left:0}  h1:lang(anp),h1:lang(as),h1:lang(bh),h1:lang(bho),h1:lang(bn),h1:lang(gu),h1:lang(hi),h1:lang(kn),h1:lang(ks),h1:lang(ml),h1:lang(mr),h1:lang(my),h1:lang(mai),h1:lang(ne),h1:lang(new),h1:lang(or),h1:lang(pa),h1:lang(pi),h1:lang(sa),h1:lang(ta),h1:lang(te){line-height:1.6em !important; } h2:lang(anp),h3:lang(anp),h4:lang(anp),h5:lang(anp),h6:lang(anp),h2:lang(as),h3:lang(as),h4:lang(as),h5:lang(as),h6:lang(as),h2:lang(bho),h3:lang(bho),h4:lang(bho),h5:lang(bho),h6:lang(bho),h2:lang(bh),h3:lang(bh),h4:lang(bh),h5:lang(bh),h6:lang(bh),h2:lang(bn),h3:lang(bn),h4:lang(bn),h5:lang(bn),h6:lang(bn),h2:lang(gu),h3:lang(gu),h4:lang(gu),h5:lang(gu),h6:lang(gu),h2:lang(hi),h3:lang(hi),h4:lang(hi),h5:lang(hi),h6:lang(hi),h2:lang(kn),h3:lang(kn),h4:lang(kn),h5:lang(kn),h6:lang(kn),h2:lang(ks),h3:lang(ks),h4:lang(ks),h5:lang(ks),h6:lang(ks),h2:lang(ml),h3:lang(ml),h4:lang(ml),h5:lang(ml),h6:lang(ml),h2:lang(mr),h3:lang(mr),h4:lang(mr),h5:lang(mr),h6:lang(mr),h2:lang(my),h3:lang(my),h4:lang(my),h5:lang(my),h6:lang(my),h2:lang(mai),h3:lang(mai),h4:lang(mai),h5:lang(mai),h6:lang(mai),h2:lang(ne),h3:lang(ne),h4:lang(ne),h5:lang(ne),h6:lang(ne),h2:lang(new),h3:lang(new),h4:lang(new),h5:lang(new),h6:lang(new),h2:lang(or),h3:lang(or),h4:lang(or),h5:lang(or),h6:lang(or),h2:lang(pa),h3:lang(pa),h4:lang(pa),h5:lang(pa),h6:lang(pa),h2:lang(pi),h3:lang(pi),h4:lang(pi),h5:lang(pi),h6:lang(pi),h2:lang(sa),h3:lang(sa),h4:lang(sa),h5:lang(sa),h6:lang(sa),h2:lang(ta),h3:lang(ta),h4:lang(ta),h5:lang(ta),h6:lang(ta),h2:lang(te),h3:lang(te),h4:lang(te),h5:lang(te),h6:lang(te){line-height:1.2em}  ol:lang(azb) li,ol:lang(bcc) li,ol:lang(bgn) li,ol:lang(bqi) li,ol:lang(fa) li,ol:lang(glk) li,ol:lang(kk-arab) li,ol:lang(lrc) li,ol:lang(luz) li,ol:lang(mzn) li{list-style-type:persian}ol:lang(ckb) li,ol:lang(sdh) li{list-style-type:arabic-indic}ol:lang(hi) li,ol:lang(mai) li,ol:lang(mr) li,ol:lang(ne) li{list-style-type:devanagari}ol:lang(as) li,ol:lang(bn) li{list-style-type:bengali}ol:lang(or) li{list-style-type:oriya}.toc ul{margin:0.3em 0}  .mw-content-ltr .toc ul,.mw-content-rtl .mw-content-ltr .toc ul{text-align:left} .mw-content-rtl .toc ul,.mw-content-ltr .mw-content-rtl .toc ul{text-align:right} .mw-content-ltr .toc ul ul,.mw-content-rtl .mw-content-ltr .toc ul ul{margin:0 0 0 2em} .mw-content-rtl .toc ul ul,.mw-content-ltr .mw-content-rtl .toc ul ul{margin:0 2em 0 0}.toc .toctitle{direction:ltr}#mw-clearyourcache,#mw-sitecsspreview,#mw-sitejspreview,#mw-usercsspreview,#mw-userjspreview{direction:ltr;unicode-bidi:embed}#mw-revision-info,#mw-revision-info-current,#mw-revision-nav{direction:ltr}  div.tright,div.floatright,table.floatright{clear:right;float:right} div.tleft,div.floatleft,table.floatleft{float:left;clear:left} #mw-credits a{unicode-bidi:embed} .printfooter{display:none} .xdebug-error{position:absolute;z-index:99}.mw-editsection{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none} .mw-editsection,.mw-editsection-like{font-size:small;font-weight:normal;margin-left:1em;vertical-align:baseline; line-height:1em}  .mw-content-ltr .mw-editsection,.mw-content-rtl .mw-content-ltr .mw-editsection{margin-left:1em} .mw-content-rtl .mw-editsection,.mw-content-ltr .mw-content-rtl .mw-editsection{margin-right:1em} sup,sub{line-height:1}}
+.messagebox,.errorbox,.warningbox,.successbox{color:#000;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin-bottom:16px;border:1px solid;padding:12px 24px;word-wrap:break-word; overflow-wrap:break-word;overflow:hidden} .messagebox :only-child,.errorbox :only-child,.warningbox :only-child,.successbox :only-child{margin:0}.messagebox h2,.errorbox h2,.warningbox h2,.successbox h2{color:inherit;display:inline;margin:0 0.5em 0 0;border:0;font-size:1em;font-weight:bold}.messagebox{background-color:#eaecf0;border-color:#a2a9b1}.errorbox{background-color:#fee7e6;border-color:#d33}.warningbox{background-color:#fef6e7;border-color:#fc3}.successbox{background-color:#d5fdf4;border-color:#14866d}
+.mw-wiki-logo{background-image:url(/skins/ultimaWiki2.png?bcb89)}
+@media print {
+	.noprint, .catlinks,.magnify,.mw-cite-backlink,.mw-editsection,.mw-editsection-like,.mw-hidden-catlinks,.mw-indicators,.mw-redirectedfrom,.patrollink,.usermessage, #column-one,#footer-places,#mw-navigation,#siteNotice, #f-poweredbyico,#f-copyrightico,li#about,li#disclaimer,li#mobileview,li#privacy{display:none} body{background:#fff;color:#000;margin:0;padding:0} a{background:none !important; padding:0 !important; }a,a.external,a.new,a.stub{color:inherit !important; text-decoration:inherit !important; } .mw-parser-output a.external.text:after,.mw-parser-output a.external.autonumber:after{content:' (' attr(href) ')';word-break:break-all;word-wrap:break-word} .mw-parser-output a.external.text[href^='//']:after,.mw-parser-output a.external.autonumber[href^='//']:after{content:' (https:' attr(href) ')'}dt{font-weight:bold}h1,h2,h3,h4,h5,h6{font-weight:bold; page-break-after:avoid;page-break-before:avoid}p{margin:1em 0;line-height:1.2; orphans:3;widows:3}img,figure,.wikitable,.thumb{ page-break-inside:avoid}img{border:0;vertical-align:middle}pre,.mw-code{background:#fff;color:#000;border:1pt dashed #000;padding:1em;font-size:8pt;white-space:pre-wrap; overflow-x:hidden; word-wrap:break-word} sup,sub{line-height:1}ul{list-style-type:square} #globalWrapper{width:100% !important; min-width:0 !important; }.mw-body{background:#fff;color:#000;border:0 !important; padding:0 !important; margin:0 !important; direction:ltr}#column-content{margin:0 !important; }#column-content .mw-body{padding:1em;margin:0 !important; }.toc{background-color:#f9f9f9;border:1pt solid #aaa;padding:5px;display:table} .tocnumber,.toctext{display:table-cell} .tocnumber{padding-left:0;padding-right:0.5em} .mw-content-ltr .tocnumber{padding-left:0;padding-right:0.5em} .mw-content-rtl .tocnumber{padding-left:0.5em;padding-right:0}  table.floatright,div.floatright,div.tright{float:right;clear:right} table.floatleft,div.floatleft,div.tleft{float:left;clear:left} div.tleft{margin:0.5em 1.4em 1.3em 0} div.tright{margin:0.5em 0 1.3em 1.4em} table.floatright,div.floatright{margin:0 0 0.5em 0.5em;border:0} table.floatleft,div.floatleft{margin:0 0.5em 0.5em 0;border:0}.center{text-align:center} div.thumb{background-color:transparent;width:auto}div.thumb a{border-bottom:0}div.thumbinner{background-color:#fff;border:0;border-radius:2px;padding:5px;font-size:10pt;color:#666;text-align:center; overflow:hidden;min-width:100px}html .thumbcaption{text-align:left;line-height:1.4;padding:3px}img.thumbborder{border:1pt solid #ddd}  .wikitable,.mw_metadata{background:#fff;margin:1em 0;border:1pt solid #aaa;border-collapse:collapse;font-size:10pt}.wikitable > caption,.mw_metadata caption{padding:5px;font-size:10pt}.wikitable > tr > th,.wikitable > tr > td,.wikitable > * > tr > th,.wikitable > * > tr > td,.mw_metadata th,.mw_metadata td{ background:#fff !important;  color:#000 !important; border:1pt solid #aaa;padding:0.4em 0.6em}.wikitable > tr > th,.wikitable > * > tr > th,.mw_metadata th{text-align:center}table.listing,table.listing td{border:1pt solid #000;border-collapse:collapse} .catlinks ul{display:inline;padding:0;list-style:none none}.catlinks li{display:inline-block;line-height:1.15;margin:0.1em 0;border-left:1pt solid #aaa;padding:0 0.4em}.catlinks li:first-child{border-left:0;padding-left:0.2em} .printfooter{padding:1em 0}#footer{background:#fff;color:#000;margin-top:1em;border-top:1pt solid #aaa;padding-top:5px;direction:ltr}}
+.tippy-iOS{cursor:pointer!important;-webkit-tap-highlight-color:transparent }.tippy-popper{transition-timing-function:cubic-bezier(.165,.84,.44,1);max-width:calc(100% - 8px);pointer-events:none;outline:0 }.tippy-popper[x-placement^=top] .tippy-backdrop{border-radius:40% 40% 0 0 }.tippy-popper[x-placement^=top] .tippy-roundarrow{bottom:-7px;bottom:-6.5px;-webkit-transform-origin:50% 0;transform-origin:50% 0;margin:0 3px }.tippy-popper[x-placement^=top] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(180deg);transform:rotate(180deg) }.tippy-popper[x-placement^=top] .tippy-arrow{border-top:8px solid #333;border-right:8px solid transparent;border-left:8px solid transparent;bottom:-7px;margin:0 3px;-webkit-transform-origin:50% 0;transform-origin:50% 0 }.tippy-popper[x-placement^=top] .tippy-backdrop{-webkit-transform-origin:0 25%;transform-origin:0 25% }.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-55%);transform:scale(1) translate(-50%,-55%) }.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-50%,-45%);transform:scale(.2) translate(-50%,-45%);opacity:0 }.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible]{-webkit-transform:translateY(-10px);transform:translateY(-10px) }.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(-20px);transform:translateY(-20px) }.tippy-popper[x-placement^=top] [data-animation=perspective]{-webkit-transform-origin:bottom;transform-origin:bottom }.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible]{-webkit-transform:perspective(700px) translateY(-10px) rotateX(0);transform:perspective(700px) translateY(-10px) rotateX(0) }.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:perspective(700px) translateY(0) rotateX(60deg);transform:perspective(700px) translateY(0) rotateX(60deg) }.tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible]{-webkit-transform:translateY(-10px);transform:translateY(-10px) }.tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px) }.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateY(-10px);transform:translateY(-10px) }.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0) }.tippy-popper[x-placement^=top] [data-animation=scale]{-webkit-transform-origin:bottom;transform-origin:bottom }.tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible]{-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1) }.tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px) scale(.5);transform:translateY(-10px) scale(.5) }.tippy-popper[x-placement^=bottom] .tippy-backdrop{border-radius:0 0 30% 30% }.tippy-popper[x-placement^=bottom] .tippy-roundarrow{top:-7px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%;margin:0 3px }.tippy-popper[x-placement^=bottom] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(0);transform:rotate(0) }.tippy-popper[x-placement^=bottom] .tippy-arrow{border-bottom:8px solid #333;border-right:8px solid transparent;border-left:8px solid transparent;top:-7px;margin:0 3px;-webkit-transform-origin:50% 100%;transform-origin:50% 100% }.tippy-popper[x-placement^=bottom] .tippy-backdrop{-webkit-transform-origin:0 -50%;transform-origin:0 -50% }.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-45%);transform:scale(1) translate(-50%,-45%) }.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-50%);transform:scale(.2) translate(-50%);opacity:0 }.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible]{-webkit-transform:translateY(10px);transform:translateY(10px) }.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px) }.tippy-popper[x-placement^=bottom] [data-animation=perspective]{-webkit-transform-origin:top;transform-origin:top }.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible]{-webkit-transform:perspective(700px) translateY(10px) rotateX(0);transform:perspective(700px) translateY(10px) rotateX(0) }.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:perspective(700px) translateY(0) rotateX(-60deg);transform:perspective(700px) translateY(0) rotateX(-60deg) }.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible]{-webkit-transform:translateY(10px);transform:translateY(10px) }.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px) }.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateY(10px);transform:translateY(10px) }.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0) }.tippy-popper[x-placement^=bottom] [data-animation=scale]{-webkit-transform-origin:top;transform-origin:top }.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible]{-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1) }.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px) scale(.5);transform:translateY(10px) scale(.5) }.tippy-popper[x-placement^=left] .tippy-backdrop{border-radius:50% 0 0 50% }.tippy-popper[x-placement^=left] .tippy-roundarrow{right:-12px;-webkit-transform-origin:33.33333333% 50%;transform-origin:33.33333333% 50%;margin:3px 0 }.tippy-popper[x-placement^=left] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(90deg);transform:rotate(90deg) }.tippy-popper[x-placement^=left] .tippy-arrow{border-left:8px solid #333;border-top:8px solid transparent;border-bottom:8px solid transparent;right:-7px;margin:3px 0;-webkit-transform-origin:0 50%;transform-origin:0 50% }.tippy-popper[x-placement^=left] .tippy-backdrop{-webkit-transform-origin:50% 0;transform-origin:50% 0 }.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-50%);transform:scale(1) translate(-50%,-50%) }.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-75%,-50%);transform:scale(.2) translate(-75%,-50%);opacity:0 }.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible]{-webkit-transform:translateX(-10px);transform:translateX(-10px) }.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(-20px);transform:translateX(-20px) }.tippy-popper[x-placement^=left] [data-animation=perspective]{-webkit-transform-origin:right;transform-origin:right }.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible]{-webkit-transform:perspective(700px) translateX(-10px) rotateY(0);transform:perspective(700px) translateX(-10px) rotateY(0) }.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:perspective(700px) translateX(0) rotateY(-60deg);transform:perspective(700px) translateX(0) rotateY(-60deg) }.tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible]{-webkit-transform:translateX(-10px);transform:translateX(-10px) }.tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px) }.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateX(-10px);transform:translateX(-10px) }.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0) }.tippy-popper[x-placement^=left] [data-animation=scale]{-webkit-transform-origin:right;transform-origin:right }.tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible]{-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1) }.tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px) scale(.5);transform:translateX(-10px) scale(.5) }.tippy-popper[x-placement^=right] .tippy-backdrop{border-radius:0 50% 50% 0 }.tippy-popper[x-placement^=right] .tippy-roundarrow{left:-12px;-webkit-transform-origin:66.66666666% 50%;transform-origin:66.66666666% 50%;margin:3px 0 }.tippy-popper[x-placement^=right] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg) }.tippy-popper[x-placement^=right] .tippy-arrow{border-right:8px solid #333;border-top:8px solid transparent;border-bottom:8px solid transparent;left:-7px;margin:3px 0;-webkit-transform-origin:100% 50%;transform-origin:100% 50% }.tippy-popper[x-placement^=right] .tippy-backdrop{-webkit-transform-origin:-50% 0;transform-origin:-50% 0 }.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-50%);transform:scale(1) translate(-50%,-50%) }.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-25%,-50%);transform:scale(.2) translate(-25%,-50%);opacity:0 }.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible]{-webkit-transform:translateX(10px);transform:translateX(10px) }.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(20px);transform:translateX(20px) }.tippy-popper[x-placement^=right] [data-animation=perspective]{-webkit-transform-origin:left;transform-origin:left }.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible]{-webkit-transform:perspective(700px) translateX(10px) rotateY(0);transform:perspective(700px) translateX(10px) rotateY(0) }.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:perspective(700px) translateX(0) rotateY(60deg);transform:perspective(700px) translateX(0) rotateY(60deg) }.tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible]{-webkit-transform:translateX(10px);transform:translateX(10px) }.tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px) }.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateX(10px);transform:translateX(10px) }.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0) }.tippy-popper[x-placement^=right] [data-animation=scale]{-webkit-transform-origin:left;transform-origin:left }.tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible]{-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1) }.tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px) scale(.5);transform:translateX(10px) scale(.5) }.tippy-tooltip{position:relative;color:#fff;border-radius:.25rem;font-size:.875rem;padding:.3125rem .5625rem;line-height:1.4;text-align:center;background-color:#333 }.tippy-tooltip[data-size=small]{padding:.1875rem .375rem;font-size:.75rem }.tippy-tooltip[data-size=large]{padding:.375rem .75rem;font-size:1rem }.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent }.tippy-tooltip[data-interactive],.tippy-tooltip[data-interactive] .tippy-roundarrow path{pointer-events:auto }.tippy-tooltip[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11) }.tippy-tooltip[data-inertia][data-state=hidden]{transition-timing-function:ease }.tippy-arrow,.tippy-roundarrow{position:absolute;width:0;height:0 }.tippy-roundarrow{width:18px;height:7px;fill:#333;pointer-events:none }.tippy-backdrop{position:absolute;background-color:#333;border-radius:50%;width:calc(110% + 2rem);left:50%;top:50%;z-index:-1;transition:all cubic-bezier(.46,.1,.52,.98);-webkit-backface-visibility:hidden;backface-visibility:hidden }.tippy-backdrop:after{content:"";float:left;padding-top:100% }.tippy-backdrop+.tippy-content{transition-property:opacity;will-change:opacity }.tippy-backdrop+.tippy-content[data-state=visible]{opacity:1 }.tippy-backdrop+.tippy-content[data-state=hidden]{opacity:0 }.tippy-tooltip.light-border-theme{background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,8,16,.15);color:#26323d;box-shadow:0 3px 14px -.5px rgba(0,8,16,.08) }.tippy-tooltip.light-border-theme .tippy-backdrop{background-color:#fff }.tippy-tooltip.light-border-theme .tippy-arrow:after,.tippy-tooltip.light-border-theme .tippy-arrow:before,.tippy-tooltip.light-border-theme .tippy-roundarrow:after,.tippy-tooltip.light-border-theme .tippy-roundarrow:before{content:"";position:absolute;z-index:-1 }.tippy-tooltip.light-border-theme .tippy-roundarrow{fill:#fff }.tippy-tooltip.light-border-theme .tippy-roundarrow:after{background-image:url(data:image/svg+xml;base64,PHN2ZyBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEuNDE0IiB2aWV3Qm94PSIwIDAgMTggNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCA3czIuMDIxLS4wMTUgNS4yNTMtNC4yMThDNi41ODQgMS4wNTEgNy43OTcuMDA3IDkgMGMxLjIwMy0uMDA3IDIuNDE2IDEuMDM1IDMuNzYxIDIuNzgyQzE2LjAxMiA3LjAwNSAxOCA3IDE4IDd6IiBmaWxsPSIjMzMzIiBmaWxsLW9wYWNpdHk9Ii4yMzUiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==);background-size:18px 7px;width:18px;height:7px;left:0;top:0;fill:rgba(0,8,16,.15) }.tippy-tooltip.light-border-theme[x-placement^=top] .tippy-roundarrow:after{top:1px;-webkit-transform:rotate(180deg);transform:rotate(180deg) }.tippy-tooltip.light-border-theme[x-placement^=top] .tippy-arrow{border-top-color:#fff }.tippy-tooltip.light-border-theme[x-placement^=top] .tippy-arrow:after{border-top:7px solid #fff;top:-7px }.tippy-tooltip.light-border-theme[x-placement^=top] .tippy-arrow:before{border-top:7px solid rgba(0,8,16,.2);bottom:-1px }.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-roundarrow:after{top:-1px }.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-arrow{border-bottom-color:#fff }.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-arrow:after{border-bottom:7px solid #fff;bottom:-7px }.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-arrow:before{border-bottom:7px solid rgba(0,8,16,.2);bottom:-6px }.tippy-tooltip.light-border-theme[x-placement^=left] .tippy-roundarrow:after{left:1px;top:0;-webkit-transform:rotate(90deg);transform:rotate(90deg) }.tippy-tooltip.light-border-theme[x-placement^=left] .tippy-arrow{border-left-color:#fff }.tippy-tooltip.light-border-theme[x-placement^=left] .tippy-arrow:after{border-left:7px solid #fff;left:-7px }.tippy-tooltip.light-border-theme[x-placement^=left] .tippy-arrow:before{border-left:7px solid rgba(0,8,16,.2);left:-6px }.tippy-tooltip.light-border-theme[x-placement^=right] .tippy-roundarrow:after{left:-1px;top:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg) }.tippy-tooltip.light-border-theme[x-placement^=right] .tippy-arrow{border-right-color:#fff }.tippy-tooltip.light-border-theme[x-placement^=right] .tippy-arrow:after{border-right:7px solid #fff;right:-7px }.tippy-tooltip.light-border-theme[x-placement^=right] .tippy-arrow:before{border-right:7px solid rgba(0,8,16,.2);right:-6px }.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-arrow,.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-roundarrow,.tippy-tooltip.light-border-theme[x-placement^=top] .tippy-arrow,.tippy-tooltip.light-border-theme[x-placement^=top] .tippy-roundarrow{-webkit-transform:translateX(-1px);transform:translateX(-1px) }.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-arrow:after,.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-arrow:before,.tippy-tooltip.light-border-theme[x-placement^=top] .tippy-arrow:after,.tippy-tooltip.light-border-theme[x-placement^=top] .tippy-arrow:before{left:-7px;border-left:7px solid transparent;border-right:7px solid transparent }.tippy-tooltip.light-border-theme[x-placement^=left] .tippy-arrow,.tippy-tooltip.light-border-theme[x-placement^=left] .tippy-roundarrow,.tippy-tooltip.light-border-theme[x-placement^=right] .tippy-arrow,.tippy-tooltip.light-border-theme[x-placement^=right] .tippy-roundarrow{-webkit-transform:translateY(-1px);transform:translateY(-1px) }.tippy-tooltip.light-border-theme[x-placement^=left] .tippy-arrow:after,.tippy-tooltip.light-border-theme[x-placement^=left] .tippy-arrow:before,.tippy-tooltip.light-border-theme[x-placement^=right] .tippy-arrow:after,.tippy-tooltip.light-border-theme[x-placement^=right] .tippy-arrow:before{top:-7px;border-top:7px solid transparent;border-bottom:7px solid transparent }.tippy-tooltip.light-theme{color:#26323d;box-shadow:0 0 20px 4px rgba(154,161,177,.15),0 4px 80px -8px rgba(36,40,47,.25),0 4px 4px -2px rgba(91,94,105,.15);background-color:#fff }.tippy-tooltip.light-theme[x-placement^=top] .tippy-arrow{border-top:8px solid #fff;border-right:8px solid transparent;border-left:8px solid transparent }.tippy-tooltip.light-theme[x-placement^=bottom] .tippy-arrow{border-bottom:8px solid #fff;border-right:8px solid transparent;border-left:8px solid transparent }.tippy-tooltip.light-theme[x-placement^=left] .tippy-arrow{border-left:8px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent }.tippy-tooltip.light-theme[x-placement^=right] .tippy-arrow{border-right:8px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent }.tippy-tooltip.light-theme .tippy-backdrop{background-color:#fff }.tippy-tooltip.light-theme .tippy-roundarrow{fill:#fff }.tippy-tooltip.light-theme[data-animatefill]{background-color:transparent }
+.cite-accessibility-label{ top:-99999px;clip:rect(1px,1px,1px,1px); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}:target .mw-cite-targeted-backlink{font-weight:bold}.mw-cite-up-arrow-backlink{display:none}:target .mw-cite-up-arrow-backlink{display:inline}:target .mw-cite-up-arrow{display:none}
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}</style><style>
+.tippy-popper{z-index:100 !important}.tippy-header{padding:.5em .8em .3em .8em;margin-bottom:0;font-size:14px;color:inherit;background-color:#f7f7f7;border-bottom:1px solid #ebebeb;border-top-left-radius:calc(.3em - 1px);border-top-right-radius:calc(.3em - 1px);text-align:left}.tippy-bottom{padding:.5em .8em .5em .8em;margin-bottom:0;font-size:14px;color:inherit;background-color:#fff;border-top:1px solid #ebebeb;border-bottom-left-radius:calc(.3em - 1px);border-bottom-right-radius:calc(.3em - 1px);text-align:left}.tippy-content-container{padding:.5em .8em;text-align:initial;word-break:break-word; font-size:14px;max-height:250px;overflow-y:auto}.tippy-content-container ul{padding-inline-start:10px;margin:0.3em 0.3em 0.3em 0.5em}.tippy-content-container code{word-break:break-all}.tippy-content-overlay{height:40px;width:260px;margin-top:10px}.tippy-tooltip.light-border-theme,.tippy-tooltip.light-theme{padding:0}.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-arrow,.tippy-tooltip.light-theme[x-placement^=bottom] .tippy-arrow,.tippy-tooltip.light-border-theme[x-placement^=bottom] .tippy-arrow:after,.tippy-tooltip.light-theme[x-placement^=bottom] .tippy-arrow:after{border-bottom-color:#f7f7f7 }.tippy-tooltip.light-border-theme.square-border-transparent-arrow[x-placement^=bottom] .tippy-arrow,.tippy-tooltip.light-border-theme.square-border-light[x-placement^=bottom] .tippy-arrow,.tippy-tooltip.light-theme.square-border-transparent-arrow[x-placement^=bottom] .tippy-arrow,.tippy-tooltip.light-theme.square-border-light[x-placement^=bottom] .tippy-arrow,.tippy-tooltip.light-border-theme.square-border-transparent-arrow[x-placement^=bottom] .tippy-arrow:after,.tippy-tooltip.light-border-theme.square-border-light[x-placement^=bottom] .tippy-arrow:after,.tippy-tooltip.light-theme.square-border-transparent-arrow[x-placement^=bottom] .tippy-arrow:after,.tippy-tooltip.light-theme.square-border-light[x-placement^=bottom] .tippy-arrow:after{border-bottom-color:#fff}.tippy-tooltip.light-border-theme.square-border,.tippy-tooltip.light-border-theme.square-border-light,.tippy-tooltip.light-border-theme.square-border-transparent-arrow{border-radius:0}.square-border-light .tippy-header{background-color:#fff }.tippy-cancel{width:auto;height:auto;float:right;font-size:20px;font-weight:bold;line-height:18px;color:#000000;text-shadow:0 1px 0 #ffffff;opacity:0.2;margin-left:10px}.tippy-cancel:after{content:'×'}.tippy-cancel:hover{color:#000000;text-decoration:none;cursor:pointer;opacity:0.4}.tippy-warning-circle{float:right;height:10px;width:10px;background-color:#ffae19;display:inline-block;margin-top:3.5px;margin-left:15px;border-radius:50%}.tippy-error-circle{float:right;height:10px;width:10px;background-color:#e04006;display:inline-block;margin-top:3.5px;margin-left:15px;border-radius:50%}.tippy-header.wide-popup{padding:.5em .6em .5em .8em}.tippy-top.wide-popup{padding:.5em .8em .0em .8em;font-size:12px}.tippy-content-container.wide-popup{padding:.5em .8em;margin-bottom:0px;font-size:14px;overflow-y:auto;overflow-x:hidden;max-height:300px}.tippy-header.accordion-popup,.tippy-header.accordion-popup.plain{padding:.5em .8em .5em .8em;font-weight:600}.tippy-header.accordion-popup.plain{background-color:transparent}.tippy-top.accordion-popup,.tippy-top.accordion-popup.plain{text-align:justify;padding:0.8em}.tippy-content-container.accordion-popup,.tippy-content-container.accordion-popup.plain{padding:0;margin-top:0px;margin-bottom:0px;font-size:14px;overflow-y:hidden;overflow-x:hidden;max-height:300px}.tippy-content-container.wide-popup ul{margin:0em 0.3em 0.3em 0.5em}.tippy-content-container.wide-popup ul{font-size:12px}.tippy-bottom.wide-popup{padding:.5em .8em .95em .8em}</style><style>
+.smw-indicator-compare-list{font-size:12px;margin-top:5px}.smw-indicator-compare-list-row{display:flex;align-items:flex-start;flex-wrap:wrap;height:100%}.smw-indicator-compare-list-row span{width:50%}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/load(3).php">
+<meta name="generator" content="MediaWiki 1.35.4">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="alternate" type="application/rdf+xml" title="Ultima IV internal formats" href="https://wiki.ultimacodex.com/index.php?title=Special:ExportRDF/Ultima_IV_internal_formats&amp;xmlmime=rdf">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit">
+<link rel="edit" title="Edit" href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit">
+<link rel="shortcut icon" href="https://wiki.ultimacodex.com/skins/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.ultimacodex.com/opensearch_desc.php" title="Ultima Codex (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.ultimacodex.com/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Ultima_IV_internal_formats rootpage-Ultima_IV_internal_formats skin-monobook action-view"><div id="globalWrapper"><div id="column-content"><div id="content" class="mw-body" role="main"><a id="top"></a><div class="mw-indicators mw-body-content">
+<div id="mw-indicator-smw-entity-examiner" class="mw-indicator"></div>
+</div>
+<h1 id="firstHeading" class="firstHeading" lang="en"><i>Ultima&nbsp;IV</i> internal formats</h1><div id="bodyContent" class="mw-body-content"><div id="siteSub">From Ultima Codex</div><div id="contentSub" lang="en" dir="ltr"></div><div id="jump-to-nav"></div><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#column-one" class="mw-jump-link">Jump to navigation</a><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#searchInput" class="mw-jump-link">Jump to search</a><!-- start content --><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#EGA_Files"><span class="tocnumber">2</span> <span class="toctext">EGA Files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#SHAPES.EGA"><span class="tocnumber">2.1</span> <span class="toctext">SHAPES.EGA</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#CHARSET.EGA"><span class="tocnumber">2.2</span> <span class="toctext">CHARSET.EGA</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Run-Length_Encoded_EGA_Files"><span class="tocnumber">2.3</span> <span class="toctext">Run-Length Encoded EGA Files</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#LZW_Encoded_EGA_Files"><span class="tocnumber">2.4</span> <span class="toctext">LZW Encoded EGA Files</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#WORLD.MAP"><span class="tocnumber">3</span> <span class="toctext">WORLD.MAP</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#ULT_files"><span class="tocnumber">4</span> <span class="toctext">ULT files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Movement_Behavior"><span class="tocnumber">4.1</span> <span class="toctext">Movement Behavior</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#TLK_files"><span class="tocnumber">5</span> <span class="toctext">TLK files</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#CON_files"><span class="tocnumber">6</span> <span class="toctext">CON files</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#DNG_files"><span class="tocnumber">7</span> <span class="toctext">DNG files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#3D_Dungeon_Map"><span class="tocnumber">7.1</span> <span class="toctext">3D Dungeon Map</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Dungeon_Floor_Tiles"><span class="tocnumber">7.1.1</span> <span class="toctext">Dungeon Floor Tiles</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#ABYSS.DNG_Map_Format"><span class="tocnumber">7.1.2</span> <span class="toctext">ABYSS.DNG Map Format</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Dungeon_Rooms"><span class="tocnumber">7.2</span> <span class="toctext">Dungeon Rooms</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#ABYSS.DNG_only"><span class="tocnumber">7.2.1</span> <span class="toctext">ABYSS.DNG only</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Dungeon_Room_Format"><span class="tocnumber">7.2.2</span> <span class="toctext">Dungeon Room Format</span></a>
+<ul>
+<li class="toclevel-4 tocsection-19"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Trigger_format"><span class="tocnumber">7.2.2.1</span> <span class="toctext">Trigger format</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#SAV_Files"><span class="tocnumber">8</span> <span class="toctext">SAV Files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#PARTY.SAV"><span class="tocnumber">8.1</span> <span class="toctext">PARTY.SAV</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Character_Record_Format"><span class="tocnumber">8.1.1</span> <span class="toctext">Character Record Format</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Party_Location"><span class="tocnumber">8.1.2</span> <span class="toctext">Party Location</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#MONSTERS.SAV"><span class="tocnumber">8.2</span> <span class="toctext">MONSTERS.SAV</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Surface"><span class="tocnumber">8.2.1</span> <span class="toctext">Surface</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Dungeons"><span class="tocnumber">8.2.2</span> <span class="toctext">Dungeons</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Settlements"><span class="tocnumber">8.2.3</span> <span class="toctext">Settlements</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-28"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#OUTMONST.SAV"><span class="tocnumber">8.3</span> <span class="toctext">OUTMONST.SAV</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#DNGMAP.SAV"><span class="tocnumber">8.4</span> <span class="toctext">DNGMAP.SAV</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Monsters"><span class="tocnumber">8.4.1</span> <span class="toctext">Monsters</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Orbs"><span class="tocnumber">8.4.2</span> <span class="toctext">Orbs</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#EXE_Files"><span class="tocnumber">9</span> <span class="toctext">EXE Files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-33"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#TITLE.EXE"><span class="tocnumber">9.1</span> <span class="toctext">TITLE.EXE</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#AVATAR.EXE"><span class="tocnumber">9.2</span> <span class="toctext">AVATAR.EXE</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#Item_Location_Record"><span class="tocnumber">9.3</span> <span class="toctext">Item Location Record</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#External_Links"><span class="tocnumber">10</span> <span class="toctext">External Links</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=1" title="Edit section: Introduction">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This is a reference to the various files comprising the <a href="https://wiki.ultimacodex.com/wiki/MS-DOS" class="mw-redirect" title="MS-DOS">DOS</a> version of <i><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV:_Quest_of_the_Avatar" title="Ultima IV: Quest of the Avatar">Ultima&nbsp;IV</a></i>.
+</p>
+<h2><span class="mw-headline" id="EGA_Files">EGA Files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=2" title="Edit section: EGA Files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>These files contain the graphics used in the game. They can be uncompressed, run-length encoded, or LZW encoded. When uncompressed, each pixel value is represented by a 4-bit value indicating one of 16 colors:
+</p>
+<table class="wikitable" style="border-style: none; text-align:center; hspace=10px" border="1" cellpadding="5">
+<tbody><tr>
+<th colspan="3">Default <a href="https://wiki.ultimacodex.com/wiki/EGA" class="mw-redirect" title="EGA">EGA</a> 16-color palette <br> (set up to match the standard <a href="https://wiki.ultimacodex.com/wiki/CGA" class="mw-redirect" title="CGA">CGA</a> colors)
+</th></tr>
+<tr>
+<th>Color</th>
+<th>rgbRGB</th>
+<th>Decimal
+</th></tr>
+<tr style="color: white; background-color: #000000">
+<td>0 – black (#000000)</td>
+<td>000000</td>
+<td>0
+</td></tr>
+<tr style="color: white; background-color: #0000AA">
+<td>1 – blue (#0000AA)</td>
+<td>000001</td>
+<td>1
+</td></tr>
+<tr style="color: white; background-color: #00AA00">
+<td>2 – green (#00AA00)</td>
+<td>000010</td>
+<td>2
+</td></tr>
+<tr style="color: white; background-color: #00AAAA">
+<td>3 – cyan (#00AAAA)</td>
+<td>000011</td>
+<td>3
+</td></tr>
+<tr style="color: white; background-color: #AA0000">
+<td>4 – red (#AA0000)</td>
+<td>000100</td>
+<td>4
+</td></tr>
+<tr style="color: white; background-color: #AA00AA">
+<td>5 – magenta (#AA00AA)</td>
+<td>000101</td>
+<td>5
+</td></tr>
+<tr style="color: white; background-color: #AA5500">
+<td>6 – brown (#AA5500)</td>
+<td>010100</td>
+<td>20
+</td></tr>
+<tr style="color: black; background-color: #AAAAAA">
+<td>7 – white / light gray (#AAAAAA)</td>
+<td>000111</td>
+<td>7
+</td></tr>
+<tr style="color: white; background-color: #555555">
+<td>8 – dark gray / bright black (#555555)</td>
+<td>111000</td>
+<td>56
+</td></tr>
+<tr style="color: white; background-color: #5555FF">
+<td>9 – bright blue (#5555FF)</td>
+<td>111001</td>
+<td>57
+</td></tr>
+<tr style="color: black; background-color: #55FF55">
+<td>10 – bright green (#55FF55)</td>
+<td>111010</td>
+<td>58
+</td></tr>
+<tr style="color: black; background-color: #55FFFF">
+<td>11 – bright cyan (#55FFFF)</td>
+<td>111011</td>
+<td>59
+</td></tr>
+<tr style="color: black; background-color: #FF5555">
+<td>12 – bright red (#FF5555)</td>
+<td>111100</td>
+<td>60
+</td></tr>
+<tr style="color: black; background-color: #FF55FF">
+<td>13 – bright magenta (#FF55FF)</td>
+<td>111101</td>
+<td>61
+</td></tr>
+<tr style="color: black; background-color: #FFFF55">
+<td>14 – bright yellow (#FFFF55)</td>
+<td>111110</td>
+<td>62
+</td></tr>
+<tr style="color: black; background-color: #FFFFFF">
+<td>15 – bright white (#FFFFFF)</td>
+<td>111111</td>
+<td>63
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="SHAPES.EGA">SHAPES.EGA</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=3" title="Edit section: SHAPES.EGA">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This file contains the bitmaps for all 256 tiles and is 32,768 bytes long. Each tile is 16x16 pixels, and each byte represents two pixels. Therefore, each tile is 128 bytes. In other words, the first 8 bytes represent the 16 pixels on the first row of the first tile (read left to right), and the next 8 bytes represent the 16 pixels on the second row of the first tile, and so on.
+</p><p>The EGA Tile set is&nbsp;:
+</p>
+<div class="floatleft"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_-_Tiles.png" class="image"><img alt="Ultima 4 - Tiles.png" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/Ultima_4_-_Tiles.png" decoding="async" width="256" height="256"></a></div>
+<p><br style="clear:both;">
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Tile #
+</th>
+<th>Notes
+</th></tr>
+<tr>
+<td>0x0000
+</td>
+<td>0
+</td>
+<td>Deep Water
+</td></tr>
+<tr>
+<td>0x0080
+</td>
+<td>1
+</td>
+<td>Medium Water
+</td></tr>
+<tr>
+<td>0x0100
+</td>
+<td>2
+</td>
+<td>Shallow Water
+</td></tr>
+<tr>
+<td>0x0180
+</td>
+<td>3
+</td>
+<td>Swamp
+</td></tr>
+<tr>
+<td>0x0200
+</td>
+<td>4
+</td>
+<td>Grasslands
+</td></tr>
+<tr>
+<td>0x0280
+</td>
+<td>5
+</td>
+<td>Scrubland
+</td></tr>
+<tr>
+<td>0x0300
+</td>
+<td>6
+</td>
+<td>Forest
+</td></tr>
+<tr>
+<td>0x0380
+</td>
+<td>7
+</td>
+<td>Hills
+</td></tr>
+<tr>
+<td>0x0400
+</td>
+<td>8
+</td>
+<td>Mountains
+</td></tr>
+<tr>
+<td>0x0480
+</td>
+<td>9
+</td>
+<td>Dungeon Entrance
+</td></tr>
+<tr>
+<td>0x0500
+</td>
+<td>10
+</td>
+<td>Town
+</td></tr>
+<tr>
+<td>0x0580
+</td>
+<td>11
+</td>
+<td>Castle
+</td></tr>
+<tr>
+<td>0x0600
+</td>
+<td>12
+</td>
+<td>Village
+</td></tr>
+<tr>
+<td>0x0680
+</td>
+<td>13
+</td>
+<td>Lord British's Caste West
+</td></tr>
+<tr>
+<td>0x0700
+</td>
+<td>14
+</td>
+<td>Lord British's Castle Entrance
+</td></tr>
+<tr>
+<td>0x0780
+</td>
+<td>15
+</td>
+<td>Lord British's Castle East
+</td></tr>
+<tr>
+<td>0x0800
+</td>
+<td>16
+</td>
+<td>Ship West
+</td></tr>
+<tr>
+<td>0x0880
+</td>
+<td>17
+</td>
+<td>Ship North
+</td></tr>
+<tr>
+<td>0x0900
+</td>
+<td>18
+</td>
+<td>Ship East
+</td></tr>
+<tr>
+<td>0x0980
+</td>
+<td>19
+</td>
+<td>Ship South
+</td></tr>
+<tr>
+<td>0x0a00
+</td>
+<td>20
+</td>
+<td>Horse West
+</td></tr>
+<tr>
+<td>0x0a80
+</td>
+<td>21
+</td>
+<td>Horse East
+</td></tr>
+<tr>
+<td>0x0b00
+</td>
+<td>22
+</td>
+<td>Tile Floor
+</td></tr>
+<tr>
+<td>0x0b80
+</td>
+<td>23
+</td>
+<td>Bridge
+</td></tr>
+<tr>
+<td>0x0c00
+</td>
+<td>24
+</td>
+<td>Balloon
+</td></tr>
+<tr>
+<td>0x0c80
+</td>
+<td>25
+</td>
+<td>Bridge North
+</td></tr>
+<tr>
+<td>0x0d00
+</td>
+<td>26
+</td>
+<td>Bridge South
+</td></tr>
+<tr>
+<td>0x0d80
+</td>
+<td>27
+</td>
+<td>Ladder Up
+</td></tr>
+<tr>
+<td>0x0e00
+</td>
+<td>28
+</td>
+<td>Ladder Down
+</td></tr>
+<tr>
+<td>0x0e80
+</td>
+<td>29
+</td>
+<td>Ruins
+</td></tr>
+<tr>
+<td>0x0f00
+</td>
+<td>30
+</td>
+<td>Shrine
+</td></tr>
+<tr>
+<td>0x0f80
+</td>
+<td>31
+</td>
+<td>Avatar
+</td></tr>
+<tr>
+<td>0x1000
+</td>
+<td>32
+</td>
+<td>Mage 1
+</td></tr>
+<tr>
+<td>0x1080
+</td>
+<td>33
+</td>
+<td>Mage 2
+</td></tr>
+<tr>
+<td>0x1100
+</td>
+<td>34
+</td>
+<td>Bard 1
+</td></tr>
+<tr>
+<td>0x1180
+</td>
+<td>35
+</td>
+<td>Bard 2
+</td></tr>
+<tr>
+<td>0x1200
+</td>
+<td>36
+</td>
+<td>Fighter 1
+</td></tr>
+<tr>
+<td>0x1280
+</td>
+<td>37
+</td>
+<td>Fighter 2
+</td></tr>
+<tr>
+<td>0x1300
+</td>
+<td>38
+</td>
+<td>Druid 1
+</td></tr>
+<tr>
+<td>0x1380
+</td>
+<td>39
+</td>
+<td>Druid 2
+</td></tr>
+<tr>
+<td>0x1400
+</td>
+<td>40
+</td>
+<td>Tinker 1
+</td></tr>
+<tr>
+<td>0x1480
+</td>
+<td>41
+</td>
+<td>Tinker 2
+</td></tr>
+<tr>
+<td>0x1500
+</td>
+<td>42
+</td>
+<td>Paladin 1
+</td></tr>
+<tr>
+<td>0x1580
+</td>
+<td>43
+</td>
+<td>Paladin 2
+</td></tr>
+<tr>
+<td>0x1600
+</td>
+<td>44
+</td>
+<td>Ranger 1
+</td></tr>
+<tr>
+<td>0x1680
+</td>
+<td>45
+</td>
+<td>Ranger 2
+</td></tr>
+<tr>
+<td>0x1700
+</td>
+<td>46
+</td>
+<td>Shepherd 1
+</td></tr>
+<tr>
+<td>0x1780
+</td>
+<td>47
+</td>
+<td>Shepherd 2
+</td></tr>
+<tr>
+<td>0x1800
+</td>
+<td>48
+</td>
+<td>Column
+</td></tr>
+<tr>
+<td>0x1880
+</td>
+<td>49
+</td>
+<td>White SW
+</td></tr>
+<tr>
+<td>0x1900
+</td>
+<td>50
+</td>
+<td>White SE
+</td></tr>
+<tr>
+<td>0x1980
+</td>
+<td>51
+</td>
+<td>White NW
+</td></tr>
+<tr>
+<td>0x1a00
+</td>
+<td>52
+</td>
+<td>White NE
+</td></tr>
+<tr>
+<td>0x1a80
+</td>
+<td>53
+</td>
+<td>Mast
+</td></tr>
+<tr>
+<td>0x1b00
+</td>
+<td>54
+</td>
+<td>Ship's Wheel
+</td></tr>
+<tr>
+<td>0x1b80
+</td>
+<td>55
+</td>
+<td>Rocks
+</td></tr>
+<tr>
+<td>0x1c00
+</td>
+<td>56
+</td>
+<td>Lyin Down
+</td></tr>
+<tr>
+<td>0x1c80
+</td>
+<td>57
+</td>
+<td>Stone Wall
+</td></tr>
+<tr>
+<td>0x1d00
+</td>
+<td>58
+</td>
+<td>Locked Door
+</td></tr>
+<tr>
+<td>0x1d80
+</td>
+<td>59
+</td>
+<td>Unlocked Door
+</td></tr>
+<tr>
+<td>0x1e00
+</td>
+<td>60
+</td>
+<td>Chest
+</td></tr>
+<tr>
+<td>0x1e80
+</td>
+<td>61
+</td>
+<td>Ankh
+</td></tr>
+<tr>
+<td>0x1f00
+</td>
+<td>62
+</td>
+<td>Brick Floor
+</td></tr>
+<tr>
+<td>0x1f80
+</td>
+<td>63
+</td>
+<td>Wooden Planks
+</td></tr>
+<tr>
+<td>0x2000
+</td>
+<td>64
+</td>
+<td>Moongate 1
+</td></tr>
+<tr>
+<td>0x2080
+</td>
+<td>65
+</td>
+<td>Moongate 2
+</td></tr>
+<tr>
+<td>0x2100
+</td>
+<td>66
+</td>
+<td>Moongate 3
+</td></tr>
+<tr>
+<td>0x2180
+</td>
+<td>67
+</td>
+<td>Moongate 4
+</td></tr>
+<tr>
+<td>0x2200
+</td>
+<td>68
+</td>
+<td>Poison Field
+</td></tr>
+<tr>
+<td>0x2280
+</td>
+<td>69
+</td>
+<td>Energy Field
+</td></tr>
+<tr>
+<td>0x2300
+</td>
+<td>70
+</td>
+<td>Fire Field
+</td></tr>
+<tr>
+<td>0x2380
+</td>
+<td>71
+</td>
+<td>Sleep Field
+</td></tr>
+<tr>
+<td>0x2400
+</td>
+<td>72
+</td>
+<td>Solid Barrier
+</td></tr>
+<tr>
+<td>0x2480
+</td>
+<td>73
+</td>
+<td>Hidden Passage
+</td></tr>
+<tr>
+<td>0x2500
+</td>
+<td>74
+</td>
+<td>Altar
+</td></tr>
+<tr>
+<td>0x2580
+</td>
+<td>75
+</td>
+<td>Spit
+</td></tr>
+<tr>
+<td>0x2600
+</td>
+<td>76
+</td>
+<td>Lava Flow
+</td></tr>
+<tr>
+<td>0x2680
+</td>
+<td>77
+</td>
+<td>Missile
+</td></tr>
+<tr>
+<td>0x2700
+</td>
+<td>78
+</td>
+<td>Magic Sphere
+</td></tr>
+<tr>
+<td>0x2780
+</td>
+<td>79
+</td>
+<td>Attack Flash
+</td></tr>
+<tr>
+<td>0x2800
+</td>
+<td>80
+</td>
+<td>Guard 1
+</td></tr>
+<tr>
+<td>0x2880
+</td>
+<td>81
+</td>
+<td>Guard 2
+</td></tr>
+<tr>
+<td>0x2900
+</td>
+<td>82
+</td>
+<td>Citizen 1
+</td></tr>
+<tr>
+<td>0x2980
+</td>
+<td>83
+</td>
+<td>Citizen 2
+</td></tr>
+<tr>
+<td>0x2a00
+</td>
+<td>84
+</td>
+<td>Singing Bard 1
+</td></tr>
+<tr>
+<td>0x2a80
+</td>
+<td>85
+</td>
+<td>Singing Bard 2
+</td></tr>
+<tr>
+<td>0x2b00
+</td>
+<td>86
+</td>
+<td>Jester 1
+</td></tr>
+<tr>
+<td>0x2b80
+</td>
+<td>87
+</td>
+<td>Jester 2
+</td></tr>
+<tr>
+<td>0x2c00
+</td>
+<td>88
+</td>
+<td>Beggar 1
+</td></tr>
+<tr>
+<td>0x2c80
+</td>
+<td>89
+</td>
+<td>Beggar 2
+</td></tr>
+<tr>
+<td>0x2d00
+</td>
+<td>90
+</td>
+<td>Child 1
+</td></tr>
+<tr>
+<td>0x2d80
+</td>
+<td>91
+</td>
+<td>Child 2
+</td></tr>
+<tr>
+<td>0x2e00
+</td>
+<td>92
+</td>
+<td>Bull 1
+</td></tr>
+<tr>
+<td>0x2e80
+</td>
+<td>93
+</td>
+<td>Bull 2
+</td></tr>
+<tr>
+<td>0x2f00
+</td>
+<td>94
+</td>
+<td>Lord British 1
+</td></tr>
+<tr>
+<td>0x2f80
+</td>
+<td>95
+</td>
+<td>Lord British 2
+</td></tr>
+<tr>
+<td>0x3000
+</td>
+<td>96
+</td>
+<td>A
+</td></tr>
+<tr>
+<td>0x3080
+</td>
+<td>97
+</td>
+<td>B
+</td></tr>
+<tr>
+<td>0x3100
+</td>
+<td>98
+</td>
+<td>C
+</td></tr>
+<tr>
+<td>0x3180
+</td>
+<td>99
+</td>
+<td>D
+</td></tr>
+<tr>
+<td>0x3200
+</td>
+<td>100
+</td>
+<td>E
+</td></tr>
+<tr>
+<td>0x3280
+</td>
+<td>101
+</td>
+<td>F
+</td></tr>
+<tr>
+<td>0x3300
+</td>
+<td>102
+</td>
+<td>G
+</td></tr>
+<tr>
+<td>0x3380
+</td>
+<td>103
+</td>
+<td>H
+</td></tr>
+<tr>
+<td>0x3400
+</td>
+<td>104
+</td>
+<td>I
+</td></tr>
+<tr>
+<td>0x3480
+</td>
+<td>105
+</td>
+<td>J
+</td></tr>
+<tr>
+<td>0x3500
+</td>
+<td>106
+</td>
+<td>K
+</td></tr>
+<tr>
+<td>0x3580
+</td>
+<td>107
+</td>
+<td>L
+</td></tr>
+<tr>
+<td>0x3600
+</td>
+<td>108
+</td>
+<td>M
+</td></tr>
+<tr>
+<td>0x3680
+</td>
+<td>109
+</td>
+<td>N
+</td></tr>
+<tr>
+<td>0x3700
+</td>
+<td>110
+</td>
+<td>O
+</td></tr>
+<tr>
+<td>0x3780
+</td>
+<td>111
+</td>
+<td>P
+</td></tr>
+<tr>
+<td>0x3800
+</td>
+<td>112
+</td>
+<td>Q
+</td></tr>
+<tr>
+<td>0x3880
+</td>
+<td>113
+</td>
+<td>R
+</td></tr>
+<tr>
+<td>0x3900
+</td>
+<td>114
+</td>
+<td>S
+</td></tr>
+<tr>
+<td>0x3980
+</td>
+<td>115
+</td>
+<td>T
+</td></tr>
+<tr>
+<td>0x3a00
+</td>
+<td>116
+</td>
+<td>U
+</td></tr>
+<tr>
+<td>0x3a80
+</td>
+<td>117
+</td>
+<td>V
+</td></tr>
+<tr>
+<td>0x3b00
+</td>
+<td>118
+</td>
+<td>W
+</td></tr>
+<tr>
+<td>0x3b80
+</td>
+<td>119
+</td>
+<td>X
+</td></tr>
+<tr>
+<td>0x3c00
+</td>
+<td>120
+</td>
+<td>Y
+</td></tr>
+<tr>
+<td>0x3c80
+</td>
+<td>121
+</td>
+<td>Z
+</td></tr>
+<tr>
+<td>0x3d00
+</td>
+<td>122
+</td>
+<td>Space
+</td></tr>
+<tr>
+<td>0x3d80
+</td>
+<td>123
+</td>
+<td>Right
+</td></tr>
+<tr>
+<td>0x3e00
+</td>
+<td>124
+</td>
+<td>Left
+</td></tr>
+<tr>
+<td>0x3e80
+</td>
+<td>125
+</td>
+<td>Window
+</td></tr>
+<tr>
+<td>0x3f00
+</td>
+<td>126
+</td>
+<td>Blank
+</td></tr>
+<tr>
+<td>0x3f80
+</td>
+<td>127
+</td>
+<td>Brick Wall
+</td></tr>
+<tr>
+<td>0x4000
+</td>
+<td>128
+</td>
+<td>Pirate Ship West
+</td></tr>
+<tr>
+<td>0x4080
+</td>
+<td>129
+</td>
+<td>Pirate Ship North
+</td></tr>
+<tr>
+<td>0x4100
+</td>
+<td>130
+</td>
+<td>Pirate Ship East
+</td></tr>
+<tr>
+<td>0x4180
+</td>
+<td>131
+</td>
+<td>Pirate Ship South
+</td></tr>
+<tr>
+<td>0x4200
+</td>
+<td>132
+</td>
+<td>Nixie 1
+</td></tr>
+<tr>
+<td>0x4280
+</td>
+<td>133
+</td>
+<td>Nixie 2
+</td></tr>
+<tr>
+<td>0x4300
+</td>
+<td>134
+</td>
+<td>Giant Squid 1
+</td></tr>
+<tr>
+<td>0x4380
+</td>
+<td>135
+</td>
+<td>Giant Squid 2
+</td></tr>
+<tr>
+<td>0x4400
+</td>
+<td>136
+</td>
+<td>Sea Serpent 1
+</td></tr>
+<tr>
+<td>0x4480
+</td>
+<td>137
+</td>
+<td>Sea Serpent 2
+</td></tr>
+<tr>
+<td>0x4500
+</td>
+<td>138
+</td>
+<td>Seahorse 1
+</td></tr>
+<tr>
+<td>0x4580
+</td>
+<td>139
+</td>
+<td>Seahorse 2
+</td></tr>
+<tr>
+<td>0x4600
+</td>
+<td>140
+</td>
+<td>Whirlpool 1
+</td></tr>
+<tr>
+<td>0x4680
+</td>
+<td>141
+</td>
+<td>Whirlpool 2
+</td></tr>
+<tr>
+<td>0x4700
+</td>
+<td>142
+</td>
+<td>Storm 1
+</td></tr>
+<tr>
+<td>0x4780
+</td>
+<td>143
+</td>
+<td>Storm 2
+</td></tr>
+<tr>
+<td>0x4800
+</td>
+<td>144
+</td>
+<td>Rat 1
+</td></tr>
+<tr>
+<td>0x4880
+</td>
+<td>145
+</td>
+<td>Rat 2
+</td></tr>
+<tr>
+<td>0x4900
+</td>
+<td>146
+</td>
+<td>Rat 3
+</td></tr>
+<tr>
+<td>0x4980
+</td>
+<td>147
+</td>
+<td>Rat 4
+</td></tr>
+<tr>
+<td>0x4a00
+</td>
+<td>148
+</td>
+<td>Bat 1
+</td></tr>
+<tr>
+<td>0x4a80
+</td>
+<td>149
+</td>
+<td>Bat 2
+</td></tr>
+<tr>
+<td>0x4b00
+</td>
+<td>150
+</td>
+<td>Bat 3
+</td></tr>
+<tr>
+<td>0x4b80
+</td>
+<td>151
+</td>
+<td>Bat 4
+</td></tr>
+<tr>
+<td>0x4c00
+</td>
+<td>152
+</td>
+<td>Giant Spider 1
+</td></tr>
+<tr>
+<td>0x4c80
+</td>
+<td>153
+</td>
+<td>Giant Spider 2
+</td></tr>
+<tr>
+<td>0x4d00
+</td>
+<td>154
+</td>
+<td>Giant Spider 3
+</td></tr>
+<tr>
+<td>0x4d80
+</td>
+<td>155
+</td>
+<td>Giant Spider 4
+</td></tr>
+<tr>
+<td>0x4e00
+</td>
+<td>156
+</td>
+<td>Ghost 1
+</td></tr>
+<tr>
+<td>0x4e80
+</td>
+<td>157
+</td>
+<td>Ghost 2
+</td></tr>
+<tr>
+<td>0x4f00
+</td>
+<td>158
+</td>
+<td>Ghost 3
+</td></tr>
+<tr>
+<td>0x4f80
+</td>
+<td>159
+</td>
+<td>Ghost 4
+</td></tr>
+<tr>
+<td>0x5000
+</td>
+<td>160
+</td>
+<td>Slime 1
+</td></tr>
+<tr>
+<td>0x5080
+</td>
+<td>161
+</td>
+<td>Slime 2
+</td></tr>
+<tr>
+<td>0x5100
+</td>
+<td>162
+</td>
+<td>Slime 3
+</td></tr>
+<tr>
+<td>0x5180
+</td>
+<td>163
+</td>
+<td>Slime 4
+</td></tr>
+<tr>
+<td>0x5200
+</td>
+<td>164
+</td>
+<td>Troll 1
+</td></tr>
+<tr>
+<td>0x5280
+</td>
+<td>165
+</td>
+<td>Troll 2
+</td></tr>
+<tr>
+<td>0x5300
+</td>
+<td>166
+</td>
+<td>Troll 3
+</td></tr>
+<tr>
+<td>0x5380
+</td>
+<td>167
+</td>
+<td>Troll 4
+</td></tr>
+<tr>
+<td>0x5400
+</td>
+<td>168
+</td>
+<td>Gremlin 1
+</td></tr>
+<tr>
+<td>0x5480
+</td>
+<td>169
+</td>
+<td>Gremlin 2
+</td></tr>
+<tr>
+<td>0x5500
+</td>
+<td>170
+</td>
+<td>Gremlin 3
+</td></tr>
+<tr>
+<td>0x5580
+</td>
+<td>171
+</td>
+<td>Gremlin 4
+</td></tr>
+<tr>
+<td>0x5600
+</td>
+<td>172
+</td>
+<td>Mimic 1
+</td></tr>
+<tr>
+<td>0x5680
+</td>
+<td>173
+</td>
+<td>Mimic 2
+</td></tr>
+<tr>
+<td>0x5700
+</td>
+<td>174
+</td>
+<td>Mimic 3
+</td></tr>
+<tr>
+<td>0x5780
+</td>
+<td>175
+</td>
+<td>Mimic 4
+</td></tr>
+<tr>
+<td>0x5800
+</td>
+<td>176
+</td>
+<td>Reaper 1
+</td></tr>
+<tr>
+<td>0x5880
+</td>
+<td>177
+</td>
+<td>Reaper 2
+</td></tr>
+<tr>
+<td>0x5900
+</td>
+<td>178
+</td>
+<td>Reaper 3
+</td></tr>
+<tr>
+<td>0x5980
+</td>
+<td>179
+</td>
+<td>Reaper 4
+</td></tr>
+<tr>
+<td>0x5a00
+</td>
+<td>180
+</td>
+<td>Insect Swarm 1
+</td></tr>
+<tr>
+<td>0x5a80
+</td>
+<td>181
+</td>
+<td>Insect Swarm 2
+</td></tr>
+<tr>
+<td>0x5b00
+</td>
+<td>182
+</td>
+<td>Insect Swarm 3
+</td></tr>
+<tr>
+<td>0x5b80
+</td>
+<td>183
+</td>
+<td>Insect Swarm 4
+</td></tr>
+<tr>
+<td>0x5c00
+</td>
+<td>184
+</td>
+<td>Gazer 1
+</td></tr>
+<tr>
+<td>0x5c80
+</td>
+<td>185
+</td>
+<td>Gazer 2
+</td></tr>
+<tr>
+<td>0x5d00
+</td>
+<td>186
+</td>
+<td>Gazer 3
+</td></tr>
+<tr>
+<td>0x5d80
+</td>
+<td>187
+</td>
+<td>Gazer 4
+</td></tr>
+<tr>
+<td>0x5e00
+</td>
+<td>188
+</td>
+<td>Phantom 1
+</td></tr>
+<tr>
+<td>0x5e80
+</td>
+<td>189
+</td>
+<td>Phantom 2
+</td></tr>
+<tr>
+<td>0x5f00
+</td>
+<td>190
+</td>
+<td>Phantom 3
+</td></tr>
+<tr>
+<td>0x5f80
+</td>
+<td>191
+</td>
+<td>Phantom 4
+</td></tr>
+<tr>
+<td>0x6000
+</td>
+<td>192
+</td>
+<td>Orc 1
+</td></tr>
+<tr>
+<td>0x6080
+</td>
+<td>193
+</td>
+<td>Orc 2
+</td></tr>
+<tr>
+<td>0x6100
+</td>
+<td>194
+</td>
+<td>Orc 3
+</td></tr>
+<tr>
+<td>0x6180
+</td>
+<td>195
+</td>
+<td>Orc 4
+</td></tr>
+<tr>
+<td>0x6200
+</td>
+<td>196
+</td>
+<td>Skeleton 1
+</td></tr>
+<tr>
+<td>0x6280
+</td>
+<td>197
+</td>
+<td>Skeleton 2
+</td></tr>
+<tr>
+<td>0x6300
+</td>
+<td>198
+</td>
+<td>Skeleton 3
+</td></tr>
+<tr>
+<td>0x6380
+</td>
+<td>199
+</td>
+<td>Skeleton 4
+</td></tr>
+<tr>
+<td>0x6400
+</td>
+<td>200
+</td>
+<td>Rogue 1
+</td></tr>
+<tr>
+<td>0x6480
+</td>
+<td>201
+</td>
+<td>Rogue 2
+</td></tr>
+<tr>
+<td>0x6500
+</td>
+<td>202
+</td>
+<td>Rogue 3
+</td></tr>
+<tr>
+<td>0x6580
+</td>
+<td>203
+</td>
+<td>Rogue 4
+</td></tr>
+<tr>
+<td>0x6600
+</td>
+<td>204
+</td>
+<td>Python 1
+</td></tr>
+<tr>
+<td>0x6680
+</td>
+<td>205
+</td>
+<td>Python 2
+</td></tr>
+<tr>
+<td>0x6700
+</td>
+<td>206
+</td>
+<td>Python 3
+</td></tr>
+<tr>
+<td>0x6780
+</td>
+<td>207
+</td>
+<td>Python 4
+</td></tr>
+<tr>
+<td>0x6800
+</td>
+<td>208
+</td>
+<td>Ettin 1
+</td></tr>
+<tr>
+<td>0x6880
+</td>
+<td>209
+</td>
+<td>Ettin 2
+</td></tr>
+<tr>
+<td>0x6900
+</td>
+<td>210
+</td>
+<td>Ettin 3
+</td></tr>
+<tr>
+<td>0x6980
+</td>
+<td>211
+</td>
+<td>Ettin 4
+</td></tr>
+<tr>
+<td>0x6a00
+</td>
+<td>212
+</td>
+<td>Headless 1
+</td></tr>
+<tr>
+<td>0x6a80
+</td>
+<td>213
+</td>
+<td>Headless 2
+</td></tr>
+<tr>
+<td>0x6b00
+</td>
+<td>214
+</td>
+<td>Headless 3
+</td></tr>
+<tr>
+<td>0x6b80
+</td>
+<td>215
+</td>
+<td>Headless 4
+</td></tr>
+<tr>
+<td>0x6c00
+</td>
+<td>216
+</td>
+<td>Cyclops 1
+</td></tr>
+<tr>
+<td>0x6c80
+</td>
+<td>217
+</td>
+<td>Cyclops 2
+</td></tr>
+<tr>
+<td>0x6d00
+</td>
+<td>218
+</td>
+<td>Cyclops 3
+</td></tr>
+<tr>
+<td>0x6d80
+</td>
+<td>219
+</td>
+<td>Cyclops 4
+</td></tr>
+<tr>
+<td>0x6e00
+</td>
+<td>220
+</td>
+<td>Wisp 1
+</td></tr>
+<tr>
+<td>0x6e80
+</td>
+<td>221
+</td>
+<td>Wisp 2
+</td></tr>
+<tr>
+<td>0x6f00
+</td>
+<td>222
+</td>
+<td>Wisp 3
+</td></tr>
+<tr>
+<td>0x6f80
+</td>
+<td>223
+</td>
+<td>Wisp 4
+</td></tr>
+<tr>
+<td>0x7000
+</td>
+<td>224
+</td>
+<td>Evil Mage 1
+</td></tr>
+<tr>
+<td>0x7080
+</td>
+<td>225
+</td>
+<td>Evil Mage 2
+</td></tr>
+<tr>
+<td>0x7100
+</td>
+<td>226
+</td>
+<td>Evil Mage 3
+</td></tr>
+<tr>
+<td>0x7180
+</td>
+<td>227
+</td>
+<td>Evil Mage 4
+</td></tr>
+<tr>
+<td>0x7200
+</td>
+<td>228
+</td>
+<td>Lich 1
+</td></tr>
+<tr>
+<td>0x7280
+</td>
+<td>229
+</td>
+<td>Lich 2
+</td></tr>
+<tr>
+<td>0x7300
+</td>
+<td>230
+</td>
+<td>Lich 3
+</td></tr>
+<tr>
+<td>0x7380
+</td>
+<td>231
+</td>
+<td>Lich 4
+</td></tr>
+<tr>
+<td>0x7400
+</td>
+<td>232
+</td>
+<td>Lava Lizard 1
+</td></tr>
+<tr>
+<td>0x7480
+</td>
+<td>233
+</td>
+<td>Lava Lizard 2
+</td></tr>
+<tr>
+<td>0x7500
+</td>
+<td>234
+</td>
+<td>Lava Lizard 3
+</td></tr>
+<tr>
+<td>0x7580
+</td>
+<td>235
+</td>
+<td>Lava Lizard 4
+</td></tr>
+<tr>
+<td>0x7600
+</td>
+<td>236
+</td>
+<td>Zorn 1
+</td></tr>
+<tr>
+<td>0x7680
+</td>
+<td>237
+</td>
+<td>Zorn 2
+</td></tr>
+<tr>
+<td>0x7700
+</td>
+<td>238
+</td>
+<td>Zorn 3
+</td></tr>
+<tr>
+<td>0x7780
+</td>
+<td>239
+</td>
+<td>Zorn 4
+</td></tr>
+<tr>
+<td>0x7800
+</td>
+<td>240
+</td>
+<td>Daemon 1
+</td></tr>
+<tr>
+<td>0x7880
+</td>
+<td>241
+</td>
+<td>Daemon 2
+</td></tr>
+<tr>
+<td>0x7900
+</td>
+<td>242
+</td>
+<td>Daemon 3
+</td></tr>
+<tr>
+<td>0x7980
+</td>
+<td>243
+</td>
+<td>Daemon 4
+</td></tr>
+<tr>
+<td>0x7a00
+</td>
+<td>244
+</td>
+<td>Hydra 1
+</td></tr>
+<tr>
+<td>0x7a80
+</td>
+<td>245
+</td>
+<td>Hydra 2
+</td></tr>
+<tr>
+<td>0x7b00
+</td>
+<td>246
+</td>
+<td>Hydra 3
+</td></tr>
+<tr>
+<td>0x7b80
+</td>
+<td>247
+</td>
+<td>Hydra 4
+</td></tr>
+<tr>
+<td>0x7c00
+</td>
+<td>248
+</td>
+<td>Dragon 1
+</td></tr>
+<tr>
+<td>0x7c80
+</td>
+<td>249
+</td>
+<td>Dragon 2
+</td></tr>
+<tr>
+<td>0x7d00
+</td>
+<td>250
+</td>
+<td>Dragon 3
+</td></tr>
+<tr>
+<td>0x7d80
+</td>
+<td>251
+</td>
+<td>Dragon 4
+</td></tr>
+<tr>
+<td>0x7e00
+</td>
+<td>252
+</td>
+<td>Balron 1
+</td></tr>
+<tr>
+<td>0x7e80
+</td>
+<td>253
+</td>
+<td>Balron 2
+</td></tr>
+<tr>
+<td>0x7f00
+</td>
+<td>254
+</td>
+<td>Balron 3
+</td></tr>
+<tr>
+<td>0x7f80
+</td>
+<td>255
+</td>
+<td>Balron 4
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="CHARSET.EGA">CHARSET.EGA</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=4" title="Edit section: CHARSET.EGA">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This contains the bitmaps for each character in the font. Each
+character is 8x8 pixels, and each byte represents two pixels. In
+other words, the first 4 bytes represent the 8 pixels on the first row
+of the first character.
+</p><p>The EGA Character Set is:
+</p>
+<div class="floatleft"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_Character_Set.png" class="image"><img alt="Ultima 4 Character Set.png" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/Ultima_4_Character_Set.png" decoding="async" width="128" height="128"></a></div>
+<p><br style="clear:both;">
+</p>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>Offset</th>
+<th>Length</th>
+<th>Notes
+</th></tr>
+<tr>
+<td>0x0</td>
+<td>32</td>
+<td>character 0
+</td></tr>
+<tr>
+<td>0x20</td>
+<td>32</td>
+<td>character 1
+</td></tr>
+<tr>
+<td>0x40</td>
+<td>32</td>
+<td>character 2
+</td></tr>
+<tr>
+<td>...
+</td>
+<td>...
+</td>
+<td>...
+</td></tr>
+<tr>
+<td>0x1FC0</td>
+<td>32</td>
+<td>character 255
+</td></tr></tbody></table>
+<p>The order is the standard ASCII mapping; 'A' is character 65, 'z' is
+character 122. The lowest 32 characters have the following glyphs:
+</p>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>#
+</th>
+<th>Name
+</th></tr>
+<tr>
+<td>0
+</td>
+<td>Ankh
+</td></tr>
+<tr>
+<td>1
+</td>
+<td>Symbol for horn effect
+</td></tr>
+<tr>
+<td>2
+</td>
+<td>Brick wall 1
+</td></tr>
+<tr>
+<td>3
+</td>
+<td>Brick wall 2
+</td></tr>
+<tr>
+<td>4
+</td>
+<td>Updown arrow
+</td></tr>
+<tr>
+<td>5
+</td>
+<td>Down arrow
+</td></tr>
+<tr>
+<td>6
+</td>
+<td>Up arrow
+</td></tr>
+<tr>
+<td>7
+</td>
+<td>Partial ankh
+</td></tr>
+<tr>
+<td>8
+</td>
+<td>Filled circle
+</td></tr>
+<tr>
+<td>9
+</td>
+<td>Copyright
+</td></tr>
+<tr>
+<td>10
+</td>
+<td>Registered trademark
+</td></tr>
+<tr>
+<td>11
+</td>
+<td>Male symbol
+</td></tr>
+<tr>
+<td>12
+</td>
+<td>Female symbol
+</td></tr>
+<tr>
+<td>13
+</td>
+<td>Border bar
+</td></tr>
+<tr>
+<td>14
+</td>
+<td>Hollow square
+</td></tr>
+<tr>
+<td>15
+</td>
+<td>?
+</td></tr>
+<tr>
+<td>16
+</td>
+<td>Border endpiece (right)
+</td></tr>
+<tr>
+<td>17
+</td>
+<td>Border endpiece (left)
+</td></tr>
+<tr>
+<td>18
+</td>
+<td>?
+</td></tr>
+<tr>
+<td>19
+</td>
+<td>Ellipsis
+</td></tr>
+<tr>
+<td>20
+</td>
+<td>Moon phase 0
+</td></tr>
+<tr>
+<td>21
+</td>
+<td>Moon phase 1
+</td></tr>
+<tr>
+<td>22
+</td>
+<td>Moon phase 2
+</td></tr>
+<tr>
+<td>23
+</td>
+<td>Moon phase 3
+</td></tr>
+<tr>
+<td>24
+</td>
+<td>Moon phase 4
+</td></tr>
+<tr>
+<td>25
+</td>
+<td>Moon phase 5
+</td></tr>
+<tr>
+<td>26
+</td>
+<td>Moon phase 6
+</td></tr>
+<tr>
+<td>27
+</td>
+<td>Moon phase 7
+</td></tr>
+<tr>
+<td>28
+</td>
+<td>Cursor image 1
+</td></tr>
+<tr>
+<td>29
+</td>
+<td>Cursor image 2
+</td></tr>
+<tr>
+<td>30
+</td>
+<td>Cursor image 3
+</td></tr>
+<tr>
+<td>31
+</td>
+<td>Cursor image 4
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Run-Length_Encoded_EGA_Files">Run-Length Encoded EGA Files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=5" title="Edit section: Run-Length Encoded EGA Files">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The following .EGA files are RLE encoded: START.EGA, KEY7.EGA, RUNE_x.EGA (where x is between 0 and 5), STONCRCL.EGA, HONESTY.EGA, COMPASSN.EGA, VALOR.EGA, JUSTICE.EGA, SACRIFIC.EGA, HONOR.EGA, SPIRIT.EGA, HUMILITY.EGA, TRUTH.EGA, LOVE.EGA, and COURAGE.EGA. Each of these files represents a 16 color 320x200 bitmap. Each pixel is encoded in 4 bits, like SHAPES.EGA and CHARSET.EGA. However, runs of identical *bytes* (not pixels) are encoded with a special run indicator value (0x02) followed by a one byte count and a one byte value. This allows a single run of up to 255 bytes (510 pixels) to be represented as three bytes. For example, the byte values "28 28 28 28" could be represented as "02 04 28". If the value 0x02 needs to be represented, it *must* be encoded in a run ("02 01 02").
+</p>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_START_EGA.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima_4_START_EGA.png" decoding="async" width="192" height="120" srcset="/images/thumb/7/7f/Ultima_4_START_EGA.png/288px-Ultima_4_START_EGA.png 1.5x, /images/7/7f/Ultima_4_START_EGA.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>START.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_KEY7_EGA.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima_4_KEY7_EGA.png" decoding="async" width="192" height="120" srcset="/images/thumb/a/a4/Ultima_4_KEY7_EGA.png/288px-Ultima_4_KEY7_EGA.png 1.5x, /images/a/a4/Ultima_4_KEY7_EGA.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>KEY7.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_EGA_Rune_0.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima_4_EGA_Rune_0.png" decoding="async" width="192" height="120" srcset="/images/thumb/4/40/Ultima_4_EGA_Rune_0.png/288px-Ultima_4_EGA_Rune_0.png 1.5x, /images/4/40/Ultima_4_EGA_Rune_0.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>RUNE_0.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_EGA_Rune_1.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima_4_EGA_Rune_1.png" decoding="async" width="192" height="120" srcset="/images/thumb/b/b0/Ultima_4_EGA_Rune_1.png/288px-Ultima_4_EGA_Rune_1.png 1.5x, /images/b/b0/Ultima_4_EGA_Rune_1.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>RUNE_1.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_EGA_Rune_2.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima_4_EGA_Rune_2.png" decoding="async" width="192" height="120" srcset="/images/thumb/1/19/Ultima_4_EGA_Rune_2.png/288px-Ultima_4_EGA_Rune_2.png 1.5x, /images/1/19/Ultima_4_EGA_Rune_2.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>RUNE_2.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_EGA_Rune_3.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima_4_EGA_Rune_3.png" decoding="async" width="192" height="120" srcset="/images/thumb/7/72/Ultima_4_EGA_Rune_3.png/288px-Ultima_4_EGA_Rune_3.png 1.5x, /images/7/72/Ultima_4_EGA_Rune_3.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>RUNE_3.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_EGA_Rune_4.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima_4_EGA_Rune_4.png" decoding="async" width="192" height="120" srcset="/images/thumb/5/50/Ultima_4_EGA_Rune_4.png/288px-Ultima_4_EGA_Rune_4.png 1.5x, /images/5/50/Ultima_4_EGA_Rune_4.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>RUNE_4.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_Rune_5.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_Rune_5.png" decoding="async" width="192" height="120" srcset="/images/thumb/e/e0/Ultima4_EGA_Rune_5.png/288px-Ultima4_EGA_Rune_5.png 1.5x, /images/e/e0/Ultima4_EGA_Rune_5.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>RUNE_5.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima_4_EGA_Stoncrcl.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima_4_EGA_Stoncrcl.png" decoding="async" width="192" height="120" srcset="/images/thumb/e/e9/Ultima_4_EGA_Stoncrcl.png/288px-Ultima_4_EGA_Stoncrcl.png 1.5x, /images/e/e9/Ultima_4_EGA_Stoncrcl.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>_STONCRCL.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_HONESTY.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_HONESTY.png" decoding="async" width="192" height="120" srcset="/images/thumb/c/c4/Ultima4_EGA_HONESTY.png/288px-Ultima4_EGA_HONESTY.png 1.5x, /images/c/c4/Ultima4_EGA_HONESTY.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>HONESTY.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_COMPASSN.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_COMPASSN.png" decoding="async" width="192" height="120" srcset="/images/thumb/0/09/Ultima4_EGA_COMPASSN.png/288px-Ultima4_EGA_COMPASSN.png 1.5x, /images/0/09/Ultima4_EGA_COMPASSN.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>COMPASSN.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_VALOR.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_VALOR.png" decoding="async" width="192" height="120" srcset="/images/thumb/5/5d/Ultima4_EGA_VALOR.png/288px-Ultima4_EGA_VALOR.png 1.5x, /images/5/5d/Ultima4_EGA_VALOR.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>VALOR.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultiam4_EGA_JUSTICE.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultiam4_EGA_JUSTICE.png" decoding="async" width="192" height="120" srcset="/images/thumb/e/e2/Ultiam4_EGA_JUSTICE.png/288px-Ultiam4_EGA_JUSTICE.png 1.5x, /images/e/e2/Ultiam4_EGA_JUSTICE.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>JUSTICE.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_SACRIFIC.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_SACRIFIC.png" decoding="async" width="192" height="120" srcset="/images/thumb/c/ca/Ultima4_EGA_SACRIFIC.png/288px-Ultima4_EGA_SACRIFIC.png 1.5x, /images/c/ca/Ultima4_EGA_SACRIFIC.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>SACRIFIC.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_HONOR.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_HONOR.png" decoding="async" width="192" height="120" srcset="/images/thumb/8/81/Ultima4_EGA_HONOR.png/288px-Ultima4_EGA_HONOR.png 1.5x, /images/8/81/Ultima4_EGA_HONOR.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>HONOR.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_SPIRIT.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_SPIRIT.png" decoding="async" width="192" height="120" srcset="/images/thumb/8/87/Ultima4_EGA_SPIRIT.png/288px-Ultima4_EGA_SPIRIT.png 1.5x, /images/8/87/Ultima4_EGA_SPIRIT.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>SPIRIT.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_HUMILITY.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_HUMILITY.png" decoding="async" width="192" height="120" srcset="/images/thumb/3/39/Ultima4_EGA_HUMILITY.png/288px-Ultima4_EGA_HUMILITY.png 1.5x, /images/3/39/Ultima4_EGA_HUMILITY.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>HUMILITY.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_TRUTH.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_TRUTH.png" decoding="async" width="192" height="120" srcset="/images/thumb/9/92/Ultima4_EGA_TRUTH.png/288px-Ultima4_EGA_TRUTH.png 1.5x, /images/9/92/Ultima4_EGA_TRUTH.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>TRUTH.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_LOVE.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_LOVE.png" decoding="async" width="192" height="120" srcset="/images/thumb/4/4f/Ultima4_EGA_LOVE.png/288px-Ultima4_EGA_LOVE.png 1.5x, /images/4/4f/Ultima4_EGA_LOVE.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>LOVE.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_EGA_COURAGE.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_EGA_COURAGE.png" decoding="async" width="192" height="120" srcset="/images/thumb/e/eb/Ultima4_EGA_COURAGE.png/288px-Ultima4_EGA_COURAGE.png 1.5x, /images/e/eb/Ultima4_EGA_COURAGE.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>COURAGE.EGA
+</p>
+			</div>
+		</div></li>
+</ul>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>File</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>START.EGA</td>
+<td>The basic game borders
+</td></tr>
+<tr>
+<td>KEY7.EGA</td>
+<td>Shown when the key is used
+</td></tr>
+<tr>
+<td>RUNE_0.EGA</td>
+<td>Vision shown after meditating on valor
+</td></tr>
+<tr>
+<td>RUNE_1.EGA</td>
+<td>Vision shown after meditating on honesty, justice, and honor
+</td></tr>
+<tr>
+<td>RUNE_2.EGA</td>
+<td>Vision shown after meditating on compassion and sacrifice
+</td></tr>
+<tr>
+<td>RUNE_3.EGA</td>
+<td>Vision shown after meditating on spirituality
+</td></tr>
+<tr>
+<td>RUNE_4.EGA</td>
+<td>Vision shown after meditating on humility
+</td></tr>
+<tr>
+<td>RUNE_5.EGA</td>
+<td>Vision after answering the final riddle in the Stygian Abyss
+</td></tr>
+<tr>
+<td>STONCRCL.EGA</td>
+<td>Shown when game completed
+</td></tr>
+<tr>
+<td>HONESTY.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>COMPASSN.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>VALOR.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>JUSTICE.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>SACRIFIC.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>HONOR.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>SPIRIT.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>HUMILITY.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>TRUTH.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>LOVE.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr>
+<tr>
+<td>COURAGE.EGA</td>
+<td>Shown during questioning in abyss
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="LZW_Encoded_EGA_Files">LZW Encoded EGA Files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=6" title="Edit section: LZW Encoded EGA Files">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The remaining .EGA files are LZW encoded: ABACUS.EGA, ANIMATE.EGA, GYPSY.EGA, INSIDE.EGA, OUTSIDE.EGA, PORTAL.EGA, TREE.EGA, WAGON.EGA, HONCOM.EGA, SACHONOR.EGA, SPIRHUM.EGA, VALJUS.EGA, and TITLE.EGA. Also, the file SHAPES.EGZ is a LZW compressed version of SHAPES.EGA. Like the RLE encoded files, each of these files represents a 16 color 320x200 bitmap. LZW encoded files only seem to be used in the introduction sequence (i.e. in TITLE.EXE); the images used by AVATAR.EXE are RLE encoded instead.
+</p><p>For more details on the LZW algorithm:
+<a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch">Lempel-Ziv-Welch</a>
+</p>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Abacus.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Abacus.png" decoding="async" width="192" height="120" srcset="/images/thumb/a/af/Ultima4_LZW_Abacus.png/288px-Ultima4_LZW_Abacus.png 1.5x, /images/a/af/Ultima4_LZW_Abacus.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>ABACUS.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Animate.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Animate.png" decoding="async" width="192" height="120" srcset="/images/thumb/2/22/Ultima4_LZW_Animate.png/288px-Ultima4_LZW_Animate.png 1.5x, /images/2/22/Ultima4_LZW_Animate.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>ANIMATE.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Gypsy.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Gypsy.png" decoding="async" width="192" height="120" srcset="/images/thumb/c/cc/Ultima4_LZW_Gypsy.png/288px-Ultima4_LZW_Gypsy.png 1.5x, /images/c/cc/Ultima4_LZW_Gypsy.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>GYPSY.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Honcom.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Honcom.png" decoding="async" width="192" height="120" srcset="/images/thumb/c/c5/Ultima4_LZW_Honcom.png/288px-Ultima4_LZW_Honcom.png 1.5x, /images/c/c5/Ultima4_LZW_Honcom.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>HONCOM.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Utima4_LZW_Inside.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Utima4_LZW_Inside.png" decoding="async" width="192" height="120" srcset="/images/thumb/b/bb/Utima4_LZW_Inside.png/288px-Utima4_LZW_Inside.png 1.5x, /images/b/bb/Utima4_LZW_Inside.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>INSIDE.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Outside.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Outside.png" decoding="async" width="192" height="120" srcset="/images/thumb/1/1d/Ultima4_LZW_Outside.png/288px-Ultima4_LZW_Outside.png 1.5x, /images/1/1d/Ultima4_LZW_Outside.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>OUTSIDE.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Portal.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Portal.png" decoding="async" width="192" height="120" srcset="/images/thumb/7/7f/Ultima4_LZW_Portal.png/288px-Ultima4_LZW_Portal.png 1.5x, /images/7/7f/Ultima4_LZW_Portal.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>PORTAL.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Sachonor.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Sachonor.png" decoding="async" width="192" height="120" srcset="/images/thumb/e/e4/Ultima4_LZW_Sachonor.png/288px-Ultima4_LZW_Sachonor.png 1.5x, /images/e/e4/Ultima4_LZW_Sachonor.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>SACHONOR.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Spirhum.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Spirhum.png" decoding="async" width="192" height="120" srcset="/images/thumb/5/52/Ultima4_LZW_Spirhum.png/288px-Ultima4_LZW_Spirhum.png 1.5x, /images/5/52/Ultima4_LZW_Spirhum.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>SPIRHUM.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Title.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Title.png" decoding="async" width="192" height="120" srcset="/images/thumb/5/53/Ultima4_LZW_Title.png/288px-Ultima4_LZW_Title.png 1.5x, /images/5/53/Ultima4_LZW_Title.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>TITLE.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Tree.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Tree.png" decoding="async" width="192" height="120" srcset="/images/thumb/3/3b/Ultima4_LZW_Tree.png/288px-Ultima4_LZW_Tree.png 1.5x, /images/3/3b/Ultima4_LZW_Tree.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>TREE.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Valjus.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Valjus.png" decoding="async" width="192" height="120" srcset="/images/thumb/1/17/Ultima4_LZW_Valjus.png/288px-Ultima4_LZW_Valjus.png 1.5x, /images/1/17/Ultima4_LZW_Valjus.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>VALJUS.EGA
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+			<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><a href="https://wiki.ultimacodex.com/wiki/File:Ultima4_LZW_Wagon.png" class="image"><img alt="" src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/192px-Ultima4_LZW_Wagon.png" decoding="async" width="192" height="120" srcset="/images/thumb/c/ca/Ultima4_LZW_Wagon.png/288px-Ultima4_LZW_Wagon.png 1.5x, /images/c/ca/Ultima4_LZW_Wagon.png 2x"></a></div></div>
+			<div class="gallerytext">
+<p>WAGON.EGA
+</p>
+			</div>
+		</div></li>
+</ul>
+<p><br>
+</p>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>File</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>ABACUS.EGA</td>
+<td>The abacus that serves as the background while the questions are asked
+</td></tr>
+<tr>
+<td>ANIMATE.EGA</td>
+<td>The frames for the little critters in the upper corners of the intro screen
+</td></tr>
+<tr>
+<td>GYPSY.EGA</td>
+<td>The gypsy herself
+</td></tr>
+<tr>
+<td>HONCOM.EGA</td>
+<td>The cards for honor and compassion
+</td></tr>
+<tr>
+<td>INSIDE.EGA</td>
+<td>Inside the fair
+</td></tr>
+<tr>
+<td>OUTSIDE.EGA</td>
+<td>The fair from outside
+</td></tr>
+<tr>
+<td>PORTAL.EGA</td>
+<td>Closeup of the moongate
+</td></tr>
+<tr>
+<td>SACHONOR.EGA</td>
+<td>The cards for sacrifice and honor
+</td></tr>
+<tr>
+<td>SPIRHUM.EGA</td>
+<td>The cards for spirituality and humility
+</td></tr>
+<tr>
+<td>TITLE.EGA</td>
+<td>The background for the inital screen, including the large Ultima IV and the border for the map/menu
+</td></tr>
+<tr>
+<td>TREE.EGA</td>
+<td>Initial graphic for character creation sequence (has animated moongate)
+</td></tr>
+<tr>
+<td>VALJUS.EGA</td>
+<td>The cards for valor and justice
+</td></tr>
+<tr>
+<td>WAGON.EGA</td>
+<td>The gyspy's wagon
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="WORLD.MAP">WORLD.MAP</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=7" title="Edit section: WORLD.MAP">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This is the map of <a href="https://wiki.ultimacodex.com/wiki/Britannia" title="Britannia">Britannia</a>. It is 256x256 tiles in total and broken up into 64 32x32 chunks; the total file is 65,536 bytes long. The first chunk is in the top left corner; the next is just to  the right of it, and so on. The last chunk is in the bottom right corner. Each tile is stored as a byte that maps to a tile in SHAPES.EGA. The chunks are stored in the same way as the overall map: left to right and top to bottom.
+</p><p>The "chunked" layout is an artifact of the limited memory on the original machines that ran <i>Ultima&nbsp;IV</i>. The whole map would take 64kb, too much for a <a href="https://wiki.ultimacodex.com/wiki/C64" class="mw-redirect" title="C64">C64</a> or an <a href="https://wiki.ultimacodex.com/wiki/Apple_II" class="mw-redirect" title="Apple II">Apple&nbsp;II</a>, so the game would keep a limited number of 1k chunks in memory at a time. As the player moved around, old chunks were thrown out as new ones were swapped in.
+</p>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>Offset</th>
+<th>Length (in bytes)</th>
+<th>Notes
+</th></tr>
+<tr>
+<td>0x0</td>
+<td>1024</td>
+<td>32x32 map matrix for chunk 0
+</td></tr>
+<tr>
+<td>0x400</td>
+<td>1024</td>
+<td>32x32 map matrix for chunk 1
+</td></tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...
+</td></tr>
+<tr>
+<td>0xFC00</td>
+<td>1024</td>
+<td>32x32 map matrix for chunk 63
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="ULT_files">ULT files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=8" title="Edit section: ULT files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>These contain town information. Specifically, a 32x32 map, plus the starting position, movement behavior, and conversation index of each <a href="https://wiki.ultimacodex.com/wiki/NPC" class="mw-redirect" title="NPC">NPC</a>. The conversation index gives the starting position of the NPC's dialog block in the corresponding .TLK file. I'm not sure why some of the data is duplicated.
+</p>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>Offset</th>
+<th>Length (in bytes)</th>
+<th>Notes
+</th></tr>
+<tr>
+<td>0x0</td>
+<td>1024</td>
+<td>32x32 Town Map Matrix
+</td></tr>
+<tr>
+<td>0x400</td>
+<td>32</td>
+<td>Tile index for NPCs 0-31
+</td></tr>
+<tr>
+<td>0x420</td>
+<td>32</td>
+<td>Start_x for NPCs 0-31
+</td></tr>
+<tr>
+<td>0x440</td>
+<td>32</td>
+<td>Start_y for NPCs 0-31
+</td></tr>
+<tr>
+<td>0x460</td>
+<td>32</td>
+<td>Unused? - Same structure as monster.sav so previous tile?
+</td></tr>
+<tr>
+<td>0x480</td>
+<td>32</td>
+<td>Unused? - Same structure as monster.sav so previous x?
+</td></tr>
+<tr>
+<td>0x4A0</td>
+<td>32</td>
+<td>Unused? - Same structure as monster.sav so previous y?
+</td></tr>
+<tr>
+<td>0x4C0</td>
+<td>32</td>
+<td>Movement Behavior for NPCs 0-31
+</td></tr>
+<tr>
+<td>0x4E0</td>
+<td>32</td>
+<td>1-based conversation index (in the corresponding tlk file) for NPCs 0-31.  0 indicates no tlk record.
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Movement_Behavior">Movement Behavior</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=9" title="Edit section: Movement Behavior">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>Byte Value</th>
+<th>Type
+</th></tr>
+<tr>
+<td>0x00</td>
+<td>Fixed
+</td></tr>
+<tr>
+<td>0x01</td>
+<td>Wander
+</td></tr>
+<tr>
+<td>0x80</td>
+<td>Follow
+</td></tr>
+<tr>
+<td>0xFF</td>
+<td>Attack
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="TLK_files">TLK files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=10" title="Edit section: TLK files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>These files contain the dialogue for up to 16 NPCs in a given area. Each NPC has a 288 (0x120) byte block containing his or her dialogues, followed by the keywords that trigger his or her responses. Most of the fields are null-terminated, variable length strings, with the following field starting immediately after. The blocks are then padded with zero bytes to 288 bytes.
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>1
+</td>
+<td>Question Flag (3=JOB, 4=HEALTH, 5=KEYWORD1, 6=KEYWORD2)
+</td></tr>
+<tr>
+<td>0x1
+</td>
+<td>1
+</td>
+<td>Does Response Affect Humility? (0=No, 1=Yes)
+</td></tr>
+<tr>
+<td>0x2
+</td>
+<td>1
+</td>
+<td>Probability of Turning Away (out of 256)
+</td></tr>
+<tr>
+<td>0x3
+</td>
+<td>Varies
+</td>
+<td>Name
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>Pronoun (He, She or It)
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>LOOK Description
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>JOB Response
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>HEALTH Response
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>KEYWORD 1 Response
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>KEYWORD 2 Response
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>Yes/No Question
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>YES Response
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>NO Response
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>KEYWORD 1
+</td></tr>
+<tr>
+<td>Varies
+</td>
+<td>Varies
+</td>
+<td>KEYWORD 2
+</td></tr>
+<tr>
+<td>Varies-0x119
+</td>
+<td>Varies
+</td>
+<td>00000....
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="CON_files">CON files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=11" title="Edit section: CON files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>These files contain the 11x11 battleground maps shown when combat starts. It has the map itself plus starting positions for up to 16 monsters and 8 party members.
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>16
+</td>
+<td>start_x for monsters 0-15
+</td></tr>
+<tr>
+<td>0x10
+</td>
+<td>16
+</td>
+<td>start_y for monsters 0-15
+</td></tr>
+<tr>
+<td>0x20
+</td>
+<td>8
+</td>
+<td>start_x for party members 0-7
+</td></tr>
+<tr>
+<td>0x28
+</td>
+<td>8
+</td>
+<td>start_y for party members 0-7
+</td></tr>
+<tr>
+<td>0x30
+</td>
+<td>16
+</td>
+<td>Purpose unknown; seems to be a constant: 08 AD 83 C0 AD 83 C0 AD 83 C0 A0 00 B9 A6 08 F0
+</td></tr>
+<tr>
+<td>0x40
+</td>
+<td>121
+</td>
+<td>11x11 Map Matrix
+</td></tr>
+<tr>
+<td>0xB9
+</td>
+<td>7
+</td>
+<td>Purpose unknown; seems to be a constant: 8D 00 00 00 00 47 09
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="DNG_files">DNG files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=12" title="Edit section: DNG files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>These files define each of the dungeons. The standard file size is 4,608 bytes. ABYSS.DNG is 16,896 bytes.
+</p>
+<h3><span class="mw-headline" id="3D_Dungeon_Map">3D Dungeon Map</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=13" title="Edit section: 3D Dungeon Map">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The first 512 bytes are the 8x8 maps for each of the 8 levels. These are used for the dungeons in 3D mode. They are read, as usual, from left to right and then top to bottom.
+</p>
+<table cellpadding="2" border="1">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>64
+</td>
+<td>Level 1 Map Matrix
+</td></tr>
+<tr>
+<td>0x40
+</td>
+<td>64
+</td>
+<td>Level 2 Map Matrix
+</td></tr>
+<tr>
+<td>0x80
+</td>
+<td>64
+</td>
+<td>Level 3 Map Matrix
+</td></tr>
+<tr>
+<td>0xC0
+</td>
+<td>64
+</td>
+<td>Level 4 Map Matrix
+</td></tr>
+<tr>
+<td>0x100
+</td>
+<td>64
+</td>
+<td>Level 5 Map Matrix
+</td></tr>
+<tr>
+<td>0x140
+</td>
+<td>64
+</td>
+<td>Level 6 Map Matrix
+</td></tr>
+<tr>
+<td>0x180
+</td>
+<td>64
+</td>
+<td>Level 7 Map Matrix
+</td></tr>
+<tr>
+<td>0x1C0
+</td>
+<td>64
+</td>
+<td>Level 8 Map Matrix
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Dungeon_Floor_Tiles">Dungeon Floor Tiles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=14" title="Edit section: Dungeon Floor Tiles">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Each point on the grid can be one of several types.
+</p>
+<table cellpadding="2" border="1">
+
+<tbody><tr>
+<th>Value
+</th>
+<th>Type
+</th></tr>
+<tr>
+<td>00
+</td>
+<td>Nothing
+</td></tr>
+<tr>
+<td>10
+</td>
+<td>Ladder Up
+</td></tr>
+<tr>
+<td>20
+</td>
+<td>Ladder Down
+</td></tr>
+<tr>
+<td>30
+</td>
+<td>Laddr Up &amp; Down
+</td></tr>
+<tr>
+<td>40
+</td>
+<td>Treasure Chest
+</td></tr>
+<tr>
+<td>50
+</td>
+<td>Ceiling Hole
+</td></tr>
+<tr>
+<td>60
+</td>
+<td>Floor Hole (unused)
+</td></tr>
+<tr>
+<td>70
+</td>
+<td>Magic Orb
+</td></tr>
+<tr>
+<td>80
+</td>
+<td>Winds/Darknes Trap
+</td></tr>
+<tr>
+<td>81
+</td>
+<td>Falling Rock Trap
+</td></tr>
+<tr>
+<td>8E
+</td>
+<td>Pit Trap
+</td></tr>
+<tr>
+<td>90
+</td>
+<td>Plain Fountain
+</td></tr>
+<tr>
+<td>91
+</td>
+<td>Healing Fountain
+</td></tr>
+<tr>
+<td>92
+</td>
+<td>Acid Fountain
+</td></tr>
+<tr>
+<td>93
+</td>
+<td>Cure Fountain
+</td></tr>
+<tr>
+<td>94
+</td>
+<td>Poison Fountain
+</td></tr>
+<tr>
+<td>A0
+</td>
+<td>Poison Field
+</td></tr>
+<tr>
+<td>A1
+</td>
+<td>Energy Field
+</td></tr>
+<tr>
+<td>A2
+</td>
+<td>Fire Field
+</td></tr>
+<tr>
+<td>A3
+</td>
+<td>Sleep Field
+</td></tr>
+<tr>
+<td>B0
+</td>
+<td>Altar
+</td></tr>
+<tr>
+<td>C0
+</td>
+<td>Door
+</td></tr>
+<tr>
+<td>D0-DF
+</td>
+<td>Dungeon Rooms 0-15
+</td></tr>
+<tr>
+<td>E0
+</td>
+<td>Secret Door
+</td></tr>
+<tr>
+<td>F0
+</td>
+<td>Wall
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="ABYSS.DNG_Map_Format">ABYSS.DNG Map Format</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=15" title="Edit section: ABYSS.DNG Map Format">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The <a href="https://wiki.ultimacodex.com/wiki/Great_Stygian_Abyss" title="Great Stygian Abyss">Stygian Abyss</a> also follows the same format with one important caveat: since it has 64 rooms instead of 16, several levels share D# values. Levels 1&amp;2 each have eight rooms. Levels 3&amp;4 each have eight rooms. Level 5 has 5 rooms, and Level 6 has 11 rooms. Level 7 has 4 rooms, and Level 8 has 12 rooms. The D# values still define the order the rooms appear; they simply reset every two dungeon levels.
+</p>
+<h3><span class="mw-headline" id="Dungeon_Rooms">Dungeon Rooms</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=16" title="Edit section: Dungeon Rooms">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The rest of the file is a set of 16 (64 in the case of the ABYSS.DNG) 256 byte blocks that define the dungeon rooms.
+</p>
+<table cellpadding="2" border="1">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x200
+</td>
+<td>256
+</td>
+<td>Room 0 Data
+</td></tr>
+<tr>
+<td>0x300
+</td>
+<td>256
+</td>
+<td>Room 1 Data
+</td></tr>
+<tr>
+<td>0x400
+</td>
+<td>256
+</td>
+<td>Room 2 Data
+</td></tr>
+<tr>
+<td>0x500
+</td>
+<td>256
+</td>
+<td>Room 3 Data
+</td></tr>
+<tr>
+<td>0x600
+</td>
+<td>256
+</td>
+<td>Room 4 Data
+</td></tr>
+<tr>
+<td>...
+</td>
+<td>...
+</td>
+<td>...
+</td></tr>
+<tr>
+<td>0x1100
+</td>
+<td>256
+</td>
+<td>Room 15 Data
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="ABYSS.DNG_only">ABYSS.DNG only</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=17" title="Edit section: ABYSS.DNG only">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<table cellpadding="2" border="1">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x200
+</td>
+<td>256
+</td>
+<td>Room 0 Data
+</td></tr>
+<tr>
+<td>0x300
+</td>
+<td>256
+</td>
+<td>Room 1 Data
+</td></tr>
+<tr>
+<td>0x400
+</td>
+<td>256
+</td>
+<td>Room 2 Data
+</td></tr>
+<tr>
+<td>0x500
+</td>
+<td>256
+</td>
+<td>Room 3 Data
+</td></tr>
+<tr>
+<td>0x600
+</td>
+<td>256
+</td>
+<td>Room 4 Data
+</td></tr>
+<tr>
+<td>...
+</td>
+<td>...
+</td>
+<td>...
+</td></tr>
+<tr>
+<td>0x1100
+</td>
+<td>256
+</td>
+<td>Room 15 Data
+</td></tr>
+<tr>
+<td>0x1200
+</td>
+<td>256
+</td>
+<td>Room 16 Data
+</td></tr>
+<tr>
+<td>0x1300
+</td>
+<td>256
+</td>
+<td>Room 17 Data
+</td></tr>
+<tr>
+<td>...
+</td>
+<td>...
+</td>
+<td>...
+</td></tr>
+<tr>
+<td>0x4100
+</td>
+<td>256
+</td>
+<td>Room 63 Data
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="Dungeon_Room_Format">Dungeon Room Format</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=18" title="Edit section: Dungeon Room Format">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<table cellpadding="2" border="1">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>16
+</td>
+<td>floor triggers (4 bytes each X 4 triggers possible)
+</td></tr>
+<tr>
+<td>0x10
+</td>
+<td>16
+</td>
+<td>tile for monsters 0-15 (0 means no monster and 0's come FIRST)
+</td></tr>
+<tr>
+<td>0x20
+</td>
+<td>16
+</td>
+<td>start_x for monsters 0-15
+</td></tr>
+<tr>
+<td>0x30
+</td>
+<td>16
+</td>
+<td>start_y for monsters 0-15
+</td></tr>
+<tr>
+<td>0x40
+</td>
+<td>8
+</td>
+<td>start_x for party member 0-7 (north entry)
+</td></tr>
+<tr>
+<td>0x48
+</td>
+<td>8
+</td>
+<td>start_y for party member 0-7 (north entry)
+</td></tr>
+<tr>
+<td>0x50
+</td>
+<td>8
+</td>
+<td>start_x for party member 0-7 (east entry)
+</td></tr>
+<tr>
+<td>0x58
+</td>
+<td>8
+</td>
+<td>start_y for party member 0-7 (east entry)
+</td></tr>
+<tr>
+<td>0x60
+</td>
+<td>8
+</td>
+<td>start_x for party member 0-7 (south entry)
+</td></tr>
+<tr>
+<td>0x68
+</td>
+<td>8
+</td>
+<td>start_y for party member 0-7 (south entry)
+</td></tr>
+<tr>
+<td>0x70
+</td>
+<td>8
+</td>
+<td>start_x for party member 0-7 (west entry)
+</td></tr>
+<tr>
+<td>0x78
+</td>
+<td>8
+</td>
+<td>start_y for party member 0-7 (west entry)
+</td></tr>
+<tr>
+<td>0x80
+</td>
+<td>121
+</td>
+<td>11x11 map matrix for room
+</td></tr>
+<tr>
+<td>0xF9
+</td>
+<td>7
+</td>
+<td>buffer
+</td></tr></tbody></table>
+<h5><span class="mw-headline" id="Trigger_format">Trigger format</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=19" title="Edit section: Trigger format">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+<table cellpadding="2" border="1">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>1
+</td>
+<td>tile to be placed
+</td></tr>
+<tr>
+<td>0x1
+</td>
+<td>1
+</td>
+<td>2 nibbles indicating the (x,y) coords of trigger
+</td></tr>
+<tr>
+<td>0x2
+</td>
+<td>1
+</td>
+<td>2 nibbles indicating the (x,y) coords of 1st tile to change
+</td></tr>
+<tr>
+<td>0x3
+</td>
+<td>1
+</td>
+<td>2 nibbles indicating the (x,y) coords of 2nd tile to change
+</td></tr></tbody></table>
+<p>All 0's indicate no trigger. "No trigger" records come last.
+</p><p><b>TRIGGER EXAMPLE:</b> 0x45 0x85 0x75 0x65 - Places a <a href="https://wiki.ultimacodex.com/wiki/Lightning_Field" class="mw-redirect" title="Lightning Field">Lightning Field</a> (tile #69) at locations (7, 5) and (6, 5) when you step on location (8, 5).
+</p>
+<h2><span class="mw-headline" id="SAV_Files">SAV Files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=20" title="Edit section: SAV Files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>These files save the state of the program between sessions.
+</p>
+<h3><span class="mw-headline" id="PARTY.SAV">PARTY.SAV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=21" title="Edit section: PARTY.SAV">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This file stores the information that is stored when the game is saved. It includes party-wide information like gold and food, plus a 39 byte record for each character.
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>4
+</td>
+<td>Counter (incremented regularly, probably every screen update)
+</td></tr>
+<tr>
+<td>0x4
+</td>
+<td>2
+</td>
+<td>Moves (low word)
+</td></tr>
+<tr>
+<td>0x6
+</td>
+<td>2
+</td>
+<td>Moves (high word)
+</td></tr>
+<tr>
+<td>0x8
+</td>
+<td>39
+</td>
+<td>Player 0 record
+</td></tr>
+<tr>
+<td>0x2F
+</td>
+<td>39
+</td>
+<td>Player 1 record
+</td></tr>
+<tr>
+<td>0x56
+</td>
+<td>39
+</td>
+<td>Player 2 record
+</td></tr>
+<tr>
+<td>0x7D
+</td>
+<td>39
+</td>
+<td>Player 3 record
+</td></tr>
+<tr>
+<td>0xA4
+</td>
+<td>39
+</td>
+<td>Player 4 record
+</td></tr>
+<tr>
+<td>0xCB
+</td>
+<td>39
+</td>
+<td>Player 5 record
+</td></tr>
+<tr>
+<td>0xF2
+</td>
+<td>39
+</td>
+<td>Player 6 record
+</td></tr>
+<tr>
+<td>0x119
+</td>
+<td>39
+</td>
+<td>Player 7 record
+</td></tr>
+<tr>
+<td>0x140
+</td>
+<td>4
+</td>
+<td>Food (in units of hundredths)
+</td></tr>
+<tr>
+<td>0x144
+</td>
+<td>2
+</td>
+<td>Gold
+</td></tr>
+<tr>
+<td>0x146
+</td>
+<td>16
+</td>
+<td><a href="https://wiki.ultimacodex.com/wiki/Karma" title="Karma">Karma</a> (2 bytes each for honesty, compassion, valor, justice, sacrifice, honor, spirituality and humility; 0-partial avatar)
+</td></tr>
+<tr>
+<td>0x156
+</td>
+<td>2
+</td>
+<td>Torches
+</td></tr>
+<tr>
+<td>0x158
+</td>
+<td>2
+</td>
+<td>Gems
+</td></tr>
+<tr>
+<td>0x15A
+</td>
+<td>2
+</td>
+<td>Keys
+</td></tr>
+<tr>
+<td>0x15C
+</td>
+<td>2
+</td>
+<td>Sextants
+</td></tr>
+<tr>
+<td>0x15E
+</td>
+<td>16
+</td>
+<td>Armor (2 bytes each for none (unused), cloth, leather, chain, plate, magic chain, magic plate, mystic robes)
+</td></tr>
+<tr>
+<td>0x16E
+</td>
+<td>32
+</td>
+<td>Weapons (2 bytes each for none (unused), staves, daggers, slings, maces, axes, swords, bows, crossbows, oil, halberds, magic axes, magic swords, magic bows, magic wands, mystic swords)
+</td></tr>
+<tr>
+<td>0x18E
+</td>
+<td>16
+</td>
+<td>Reagents (2 bytes each for sulfurous ash, ginseng, garlic, spider silk, blood moss, black pearl, nightshade, mandrake)
+</td></tr>
+<tr>
+<td>0x19E
+</td>
+<td>52
+</td>
+<td>Mixtures (2 bytes each for awaken, blink, cure, dispel, energy, fireball, gate, heal, iceball, jinx, kill, light,magic missile, negate, open, protection, quickness, resurrect, sleep, tremor, undead, view, winds, x-it, y-up, z-down)
+</td></tr>
+<tr>
+<td>0x1D2
+</td>
+<td>1
+</td>
+<td>Items (1 bit each for skull, skull destroyed, candle, book, bell, key part C, key part L, key part T)
+</td></tr>
+<tr>
+<td>0x1D3
+</td>
+<td>1
+</td>
+<td>Items (1 bit each for horn, wheel, candle used at abyss entrance, book used at abyss entrance, bell used at abyss entrance, (3 bits unused))
+</td></tr>
+<tr>
+<td>0x1D4
+</td>
+<td>1
+</td>
+<td>X coordinate
+</td></tr>
+<tr>
+<td>0x1D5
+</td>
+<td>1
+</td>
+<td>Y coordinate
+</td></tr>
+<tr>
+<td>0x1D6
+</td>
+<td>1
+</td>
+<td>Stones (1 bit each for BYRGOPWB)
+</td></tr>
+<tr>
+<td>0x1D7
+</td>
+<td>1
+</td>
+<td>Runes (1 bit each for HCVJSHSH)
+</td></tr>
+<tr>
+<td>0x1D8
+</td>
+<td>2
+</td>
+<td>Number of characters in party
+</td></tr>
+<tr>
+<td>0x1DA
+</td>
+<td>2
+</td>
+<td>Transportation (0x10-ship facing west, 0x11-ship facing north, 0x12-ship facing east, 0x13-ship facing south, 0x14-horse facing west, 0x15-horse facing east, 0x18-balloon, 0x1f-on foot)
+</td></tr>
+<tr>
+<td>0x1DC
+</td>
+<td>2
+</td>
+<td>On surface: balloon status (0-on ground, 1-flying) in dungeon: current torch duration
+</td></tr>
+<tr>
+<td>0x1DE
+</td>
+<td>2
+</td>
+<td>Current phase of left moon (Trammel); range = 0-7
+</td></tr>
+<tr>
+<td>0x1E0
+</td>
+<td>2
+</td>
+<td>Current phase of right moon (Felucca); range = 0-7
+</td></tr>
+<tr>
+<td>0x1E2
+</td>
+<td>2
+</td>
+<td>Hull integrity of currently boarded ship if you x-it a ship, save, restart the game, and board the ship again, you will find that all damage to the ship has been mysteriously repaired.
+</td></tr>
+<tr>
+<td>0x1E4
+</td>
+<td>2
+</td>
+<td>Introduced to Lord British (0-haven't been introduced, 1-introduced)
+</td></tr>
+<tr>
+<td>0x1E6
+</td>
+<td>2
+</td>
+<td>Time of last successful hole up &amp; camp. The game stores ((moves / 0x64) &amp; 0xffff) in this field when you successfully hole up &amp; camp. If (moves / 0x64) &lt; 0x10000: You can only hole up &amp; camp successfully if the current ((moves / 0x64) &amp; 0xffff) is different from the value in this field. If (moves / 0x64) &gt;= 0x10000: Hole up &amp; camp is always successful.
+</td></tr>
+<tr>
+<td>0x1E8
+</td>
+<td>2
+</td>
+<td>Time of last mandrake/nightshade find. The game stores (moves &amp; 0xf0) in this field when you find mandrake/nightshade. You can only find mandrake/nightshade if the current (moves &amp; 0xf0) is different from the value in this field.
+</td></tr>
+<tr>
+<td>0x1EA
+</td>
+<td>2
+</td>
+<td>Time of last successful meditation at a shrine. The game stores ((moves / 0x64) &amp; 0xffff) in this field when you successfully meditate at a shrine. If (moves / 0x64) &lt; 0x10000: You can only meditate successfully if the current ((moves / 0x64) &amp; 0xffff) is different from the value in this field. If (moves / 0x64) &gt;= 0x10000: Meditating at a shrine is always successful.
+</td></tr>
+<tr>
+<td>0x1EC
+</td>
+<td>2
+</td>
+<td>Time of last virtue-related conversation. The game stores ((moves / 0x10) &amp; 0xffff) in field when one of the following happens: (1) you give gold to a beggar, (2) you answer a yes/no question from an NPC (doesn't have to be a question where the answer affects your virtue). If ((moves / 0x10) &amp; 0xffff) &lt; 0x10000: Giving gold to a beggar or answering a virtue-related yes/no question only increases your karma if ((moves / 0x10) &amp; 0xffff) is different from the value in this field. If ((moves / 0x10) &amp; 0xffff) &gt;= 0x10000: Giving gold or answering a virtue question always increases your karma.
+</td></tr>
+<tr>
+<td>0x1EE
+</td>
+<td>2
+</td>
+<td>If the party is in a dungeon: coordinates of this dungeon, if not: coordinates of the dungeon last entered by the party
+</td></tr>
+<tr>
+<td>0x1F0
+</td>
+<td>2
+</td>
+<td>Orientation in dungeon (0-west, 1-north, 2-east, 3-south)
+</td></tr>
+<tr>
+<td>0x1F2
+</td>
+<td>2
+</td>
+<td>Dungeon level (starting at zero, 0xffff = surface)
+</td></tr>
+<tr>
+<td>0x1F4
+</td>
+<td>2
+</td>
+<td>Current party location (see below)
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Character_Record_Format">Character Record Format</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=22" title="Edit section: Character Record Format">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>2
+</td>
+<td>HP
+</td></tr>
+<tr>
+<td>0x2
+</td>
+<td>2
+</td>
+<td>Maximum HP
+</td></tr>
+<tr>
+<td>0x4
+</td>
+<td>2
+</td>
+<td>XP
+</td></tr>
+<tr>
+<td>0x6
+</td>
+<td>2
+</td>
+<td>Strength
+</td></tr>
+<tr>
+<td>0x8
+</td>
+<td>2
+</td>
+<td>Dexterity
+</td></tr>
+<tr>
+<td>0xA
+</td>
+<td>2
+</td>
+<td>Intelligence
+</td></tr>
+<tr>
+<td>0xC
+</td>
+<td>2
+</td>
+<td>MP
+</td></tr>
+<tr>
+<td>0xE
+</td>
+<td>2
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x10
+</td>
+<td>2
+</td>
+<td>Weapon
+</td></tr>
+<tr>
+<td>0x12
+</td>
+<td>2
+</td>
+<td>Armor
+</td></tr>
+<tr>
+<td>0x14
+</td>
+<td>16
+</td>
+<td>Name
+</td></tr>
+<tr>
+<td>0x24
+</td>
+<td>1
+</td>
+<td>Sex (0xb-male, 0xc-female)
+</td></tr>
+<tr>
+<td>0x25
+</td>
+<td>1
+</td>
+<td>Class
+</td></tr>
+<tr>
+<td>0x26
+</td>
+<td>1
+</td>
+<td>Status ('G'-good, 'P'-poisoned, 'S'-sleeping, 'D'-dead)
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Party_Location">Party Location</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=23" title="Edit section: Party Location">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Since you can only save on the surface or in a dungeon, the only valid party locations are 0 and 0x11-0x18.
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Value
+</th>
+<th>Location
+</th></tr>
+<tr>
+<td>0x00
+</td>
+<td>Surface
+</td></tr>
+<tr>
+<td>0x01
+</td>
+<td>Lord British's castle
+</td></tr>
+<tr>
+<td>0x02
+</td>
+<td>The Lycaeum
+</td></tr>
+<tr>
+<td>0x03
+</td>
+<td>Empath Abbey
+</td></tr>
+<tr>
+<td>0x04
+</td>
+<td>Serpent's Hold
+</td></tr>
+<tr>
+<td>0x05
+</td>
+<td>Moonglow
+</td></tr>
+<tr>
+<td>0x06
+</td>
+<td>Britain
+</td></tr>
+<tr>
+<td>0x07
+</td>
+<td>Jhelom
+</td></tr>
+<tr>
+<td>0x08
+</td>
+<td>Yew
+</td></tr>
+<tr>
+<td>0x09
+</td>
+<td>Minoc
+</td></tr>
+<tr>
+<td>0x0A
+</td>
+<td>Trinsic
+</td></tr>
+<tr>
+<td>0x0B
+</td>
+<td>Skara Brae
+</td></tr>
+<tr>
+<td>0x0C
+</td>
+<td>Magincia
+</td></tr>
+<tr>
+<td>0x0D
+</td>
+<td>Paws
+</td></tr>
+<tr>
+<td>0x0E
+</td>
+<td>Buccaneer's Den
+</td></tr>
+<tr>
+<td>0x0F
+</td>
+<td>Vesper
+</td></tr>
+<tr>
+<td>0x10
+</td>
+<td>Cove
+</td></tr>
+<tr>
+<td>0x11
+</td>
+<td>Deceit
+</td></tr>
+<tr>
+<td>0x12
+</td>
+<td>Despise
+</td></tr>
+<tr>
+<td>0x13
+</td>
+<td>Destard
+</td></tr>
+<tr>
+<td>0x14
+</td>
+<td>Wrong
+</td></tr>
+<tr>
+<td>0x15
+</td>
+<td>Covetous
+</td></tr>
+<tr>
+<td>0x16
+</td>
+<td>Shame
+</td></tr>
+<tr>
+<td>0x17
+</td>
+<td>Hythloth
+</td></tr>
+<tr>
+<td>0x18
+</td>
+<td>Abyss
+</td></tr>
+<tr>
+<td>0x19
+</td>
+<td>Shrine of Honesty
+</td></tr>
+<tr>
+<td>0x1A
+</td>
+<td>Shrine of Compassion
+</td></tr>
+<tr>
+<td>0x1B
+</td>
+<td>Shrine of Valor
+</td></tr>
+<tr>
+<td>0x1C
+</td>
+<td>Shrine of Justice
+</td></tr>
+<tr>
+<td>0x1D
+</td>
+<td>Shrine of Sacrifice
+</td></tr>
+<tr>
+<td>0x1E
+</td>
+<td>Shrine of Honor
+</td></tr>
+<tr>
+<td>0x1F
+</td>
+<td>Shrine of Spirituality
+</td></tr>
+<tr>
+<td>0x20
+</td>
+<td>Shrine of Humility
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="MONSTERS.SAV">MONSTERS.SAV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=24" title="Edit section: MONSTERS.SAV">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><i>Ultima&nbsp;IV</i> maintains a structure (in memory) that I've decided to call
+the "monster table."
+When you Journey Onward, U4 loads MONSTERS.SAV into the monster table.
+When you Quit &amp; Save, U4 writes the monster table to MONSTERS.SAV.
+The purpose of the monster table fields depends on the current party
+location (surface, dungeon, settlement).
+</p>
+<h4><span class="mw-headline" id="Surface">Surface</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=25" title="Edit section: Surface">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>On the surface, the monster table contains information about monsters
+and inanimate objects (chests, horses, ships, balloon).
+A table entry is free if previousTile[i]==0. When u4dos
+deletes an entry, it sets both currentTile[i] and previousTile[i] to 0.
+Slots 0-7 are for monsters, while slots 8-31 are for inanimate objects.
+Non-empty entries don't have to be contiguous.
+Whirlpools and twisters are special cases; they must be placed in slot 0-3,
+or they won't swallow ships / damage the party.
+When you leave Hythloth, u4dos creates the balloon at (233 / 242).
+If there is more than one inanimate object on a tile, objects closer to
+the beginning of the table are drawn on top of those closer to the end.
+Monsters and the party are always drawn on top of inanimate objects.
+The current tile and previous tile values are used during runtime.
+However, when the game is saved, the previous tile must be set to the
+monster's base tile. The current tile can be any of the monster's tiles, except for pirate
+ships, where the current tile determines which direction the pirate ship
+is facing. If the previous tile is not set to the monster's base tile, it won't behave
+properly in u4dos: monsters with ranged attacks won't use them in combat,
+twisters and whirlpools will attack the party, and pirates will appear as
+pirate ships in battle.
+For transports with more than one tile (horse, ship), the previous tile
+determines which direction the transport is facing, while the current tile
+can be any of the transport's tiles.
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>32
+</td>
+<td>Current Tile #s
+</td></tr>
+<tr>
+<td>0x20
+</td>
+<td>32
+</td>
+<td>X Coordinates For Current Turn
+</td></tr>
+<tr>
+<td>0x40
+</td>
+<td>32
+</td>
+<td>Y Coordinates For Current Turn
+</td></tr>
+<tr>
+<td>0x60
+</td>
+<td>32
+</td>
+<td>Tile #s For Previous Turn
+</td></tr>
+<tr>
+<td>0x80
+</td>
+<td>32
+</td>
+<td>X Coordinates For Previous Turn
+</td></tr>
+<tr>
+<td>0xA0
+</td>
+<td>32
+</td>
+<td>Y Coordinates For Previous Turn
+</td></tr>
+<tr>
+<td>0xC0
+</td>
+<td>32
+</td>
+<td>Unused
+</td></tr>
+<tr>
+<td>0xE0
+</td>
+<td>32
+</td>
+<td>Unused
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Dungeons">Dungeons</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=26" title="Edit section: Dungeons">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>In a dungeon, the monster table contains information about the monsters
+in the dungeon.
+A monster stored in the monster table is *also* stored in DNGMAP.SAV.
+Inanimate objects are not stored in the monster table; they are stored *only* in DNGMAP.SAV.
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>32
+</td>
+<td>Unused
+</td></tr>
+<tr>
+<td>0x20
+</td>
+<td>32
+</td>
+<td>X Coordinate For Current Turn
+</td></tr>
+<tr>
+<td>0x40
+</td>
+<td>32
+</td>
+<td>Y Coordinate For Current Turn
+</td></tr>
+<tr>
+<td>0x60
+</td>
+<td>32
+</td>
+<td>Current Tile #
+</td></tr>
+<tr>
+<td>0x80
+</td>
+<td>32
+</td>
+<td>X Coordinate For Previous Turn
+</td></tr>
+<tr>
+<td>0xA0
+</td>
+<td>32
+</td>
+<td>Y Coordinate For Previous Turn
+</td></tr>
+<tr>
+<td>0xC0
+</td>
+<td>32
+</td>
+<td>Dungeon Level (Range: 0-7)
+</td></tr>
+<tr>
+<td>0xE0
+</td>
+<td>32
+</td>
+<td>Unused
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Settlements">Settlements</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=27" title="Edit section: Settlements">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>In a castle/town/village, the monster table is loaded from the settlements’
+.ULT file, starting at offset 0x400. It contains information about the settlements’ NPCs.
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>32
+</td>
+<td>Current Tile #
+</td></tr>
+<tr>
+<td>0x20
+</td>
+<td>32
+</td>
+<td>X Coordinate For Current Turn
+</td></tr>
+<tr>
+<td>0x40
+</td>
+<td>32
+</td>
+<td>Y Coordinate For Current Turn
+</td></tr>
+<tr>
+<td>0x60
+</td>
+<td>32
+</td>
+<td>Tile # For Previous Turn
+</td></tr>
+<tr>
+<td>0x80
+</td>
+<td>32
+</td>
+<td>X Coordinate For Previous Turn
+</td></tr>
+<tr>
+<td>0xA0
+</td>
+<td>32
+</td>
+<td>Y Coordinate For Previous Turn
+</td></tr>
+<tr>
+<td>0xC0
+</td>
+<td>32
+</td>
+<td>Movement Behavior For NPCs 0-31 (0x0-fixed, 0x1-wander, 0x80-follow, 0xFF-attack)
+</td></tr>
+<tr>
+<td>0xE0
+</td>
+<td>32
+</td>
+<td>Conversation Index (.tlk file) For NPCs 0-31
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="OUTMONST.SAV">OUTMONST.SAV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=28" title="Edit section: OUTMONST.SAV">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>OUTMONST.SAV is a backup of the monster table, created when you enter
+a dungeon or settlement.
+When you leave a dungeon or settlement, the monster table is reloaded
+from OUTMONST.SAV.
+</p><p><b>Exception:</b> When you enter Hythloth through the ladder in LB's castle,
+the game does not write the current monster table to OUTMONST.SAV,
+because it already did that when you entered LB's castle.
+</p>
+<h3><span class="mw-headline" id="DNGMAP.SAV">DNGMAP.SAV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=29" title="Edit section: DNGMAP.SAV">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>When you Quit &amp; Save in a dungeon, the game saves objects (orbs,
+chests) and monsters in DNGMAP.SAV.
+DNGMAP.SAV contains the 8x8 maps for all 8 levels.
+Every tile is encoded as a byte.
+The upper nibble of a tile determines the tile type (see below).
+The lower nibble encodes the monster standing on the tile, except
+for tiles 0x80 0x90 0xA0 0xD0 (see below).
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Value
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x00
+</td>
+<td>Nothing
+</td></tr>
+<tr>
+<td>0x10
+</td>
+<td>Ladder Up
+</td></tr>
+<tr>
+<td>0x20
+</td>
+<td>Ladder Down
+</td></tr>
+<tr>
+<td>0x30
+</td>
+<td>Ladder Up/Down
+</td></tr>
+<tr>
+<td>0x40
+</td>
+<td>Chest
+</td></tr>
+<tr>
+<td>0x50
+</td>
+<td>Hole in Ceiling (unused)
+</td></tr>
+<tr>
+<td>0x60
+</td>
+<td>Hole in Floor (unused)
+</td></tr>
+<tr>
+<td>0x70
+</td>
+<td>Orb (see below)
+</td></tr>
+<tr>
+<td>0x80
+</td>
+<td>Wind/Darkness Trap (magic winds)
+</td></tr>
+<tr>
+<td>0x81
+</td>
+<td>Falling Rocks Trap (falling rocks)
+</td></tr>
+<tr>
+<td>0x8E
+</td>
+<td>Pit Trap
+</td></tr>
+<tr>
+<td>0x90
+</td>
+<td>Ordinary Fountain (no effect)
+</td></tr>
+<tr>
+<td>0x91
+</td>
+<td>Healing Fountain (restores all HP)
+</td></tr>
+<tr>
+<td>0x92
+</td>
+<td>Acid Fountain (100 HP damage)
+</td></tr>
+<tr>
+<td>0x93
+</td>
+<td>Curing Fountain (cures poison)
+</td></tr>
+<tr>
+<td>0x94
+</td>
+<td>Poisoned Fountain (poison and 100 HP damage)
+</td></tr>
+<tr>
+<td>0xA0
+</td>
+<td>Poison Field
+</td></tr>
+<tr>
+<td>0xA1
+</td>
+<td>Energy Field
+</td></tr>
+<tr>
+<td>0xA2
+</td>
+<td>Fire Field
+</td></tr>
+<tr>
+<td>0xA3
+</td>
+<td>Sleep Field
+</td></tr>
+<tr>
+<td>0xB0
+</td>
+<td>Altar (stone color depends on dungeon)
+</td></tr>
+<tr>
+<td>0xC0
+</td>
+<td>Door
+</td></tr>
+<tr>
+<td>0xD0-0xDF
+</td>
+<td>Dungeon Rooms 0-15
+</td></tr>
+<tr>
+<td>0xE0
+</td>
+<td>Hidden Door
+</td></tr>
+<tr>
+<td>0xF0
+</td>
+<td>Wall
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Monsters">Monsters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=30" title="Edit section: Monsters">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Value
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>None
+</td></tr>
+<tr>
+<td>0x1
+</td>
+<td>Rat
+</td></tr>
+<tr>
+<td>0x2
+</td>
+<td>Bat
+</td></tr>
+<tr>
+<td>0x3
+</td>
+<td>Spider
+</td></tr>
+<tr>
+<td>0x4
+</td>
+<td>Ghost
+</td></tr>
+<tr>
+<td>0x5
+</td>
+<td>Slime
+</td></tr>
+<tr>
+<td>0x6
+</td>
+<td>Troll
+</td></tr>
+<tr>
+<td>0x7
+</td>
+<td>Gremlin
+</td></tr>
+<tr>
+<td>0x8
+</td>
+<td>Mimic
+</td></tr>
+<tr>
+<td>0x9
+</td>
+<td>Reaper
+</td></tr>
+<tr>
+<td>0xA
+</td>
+<td>Insect Swarm
+</td></tr>
+<tr>
+<td>0xB
+</td>
+<td>Gazer
+</td></tr>
+<tr>
+<td>0xC
+</td>
+<td>Phantom
+</td></tr>
+<tr>
+<td>0xD
+</td>
+<td>Orc
+</td></tr>
+<tr>
+<td>0xE
+</td>
+<td>Skeleton
+</td></tr>
+<tr>
+<td>0xF
+</td>
+<td>Rogue
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Orbs">Orbs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=31" title="Edit section: Orbs">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>When a PC touches an orb, one or more attributes are raised by 5
+points each. Which attributes are raised depends on the dungeon.
+</p>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>Dungeon
+</th>
+<th>Attributes
+</th></tr>
+<tr>
+<td>Deceit
+</td>
+<td>INT
+</td></tr>
+<tr>
+<td>Despise
+</td>
+<td>DEX
+</td></tr>
+<tr>
+<td>Destard
+</td>
+<td>STR
+</td></tr>
+<tr>
+<td>Wrong
+</td>
+<td>INT,DEX
+</td></tr>
+<tr>
+<td>Covetous
+</td>
+<td>DEX,STR
+</td></tr>
+<tr>
+<td>Shame
+</td>
+<td>INT,DEX
+</td></tr>
+<tr>
+<td>Hythloth
+</td>
+<td>INT,DEX,STR
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="EXE_Files">EXE Files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=32" title="Edit section: EXE Files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>These files are the executable programs that power the game. They also contain some data that does not fit elsewhere.
+</p>
+<h3><span class="mw-headline" id="TITLE.EXE">TITLE.EXE</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=33" title="Edit section: TITLE.EXE">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This executable is launched by ULTIMA.COM to display the introduction
+and create new characters. When "Journey Onward" is selected from the
+intro menu, it exits and ULTIMA.COM passes control off to AVATAR.EXE,
+the main game executable. AVATAR.EXE has lots of the data necessary
+for the intro screens embedded in it.
+</p>
+<table border="1" cellpadding="2">
+
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>17445
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x4425
+</td>
+<td>11088
+</td>
+<td>Text for Introduction, Gypsy Dialog and Gyspy Questions (null-terminated strings)
+</td></tr>
+<tr>
+<td>0x6f75
+</td>
+<td>1035
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x70dc
+</td>
+<td>8
+</td>
+<td>Starting x positions for a new game
+</td></tr>
+<tr>
+<td>0x70e4
+</td>
+<td>8
+</td>
+<td>Starting y positions for a new game<sup id="cite_ref-1" class="reference"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#cite_note-1">[1]</a></sup>
+</td></tr>
+<tr>
+<td>0x7380
+</td>
+<td>184
+</td>
+<td>List of Frames Sequences for Beasties on Intro Screen
+</td></tr>
+<tr>
+<td>0x7438
+</td>
+<td>54
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x746e
+</td>
+<td>532
+</td>
+<td>266 X/Y Coordinates for the pixels that make up the Lord British signature on the introductory title screen
+</td></tr>
+<tr>
+<td>0x7682
+</td>
+<td>1
+</td>
+<td>Zero Terminating Byte
+</td></tr>
+<tr>
+<td>0x7683
+</td>
+<td>95
+</td>
+<td>Tile Values for the 19x5 map that appears on the introductory title screen
+</td></tr>
+<tr>
+<td>0x76e2
+</td>
+<td>548
+</td>
+<td>Script Data for the intro map animations
+</td></tr>
+<tr>
+<td>0x7906
+</td>
+<td>...
+</td>
+<td>???
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="AVATAR.EXE">AVATAR.EXE</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=34" title="Edit section: AVATAR.EXE">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This is the main game executable, launched from ultima.com (or run on
+its own to skip the intro). Lots of the special case data is embedded
+in it.
+</p>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>25123
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x06223
+</td>
+<td>1
+</td>
+<td>Everything this value and below can't be used in the Abyss
+</td></tr>
+<tr>
+<td>0x0
+</td>
+<td>38719
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x0f963
+</td>
+<td>1
+</td>
+<td>volume on/off flag
+</td></tr>
+<tr>
+<td>0x0f964
+</td>
+<td>27
+</td>
+<td>13 two-byte code pointers to 13 sound generation routines plus one padding byte
+</td></tr>
+<tr>
+<td>0x0f97f
+</td>
+<td>171
+</td>
+<td>.ULT filenames; 16 zero terminated strings
+</td></tr>
+<tr>
+<td>0x0fa2a
+</td>
+<td>48
+</td>
+<td>stone colors; 8 zero terminated strings
+</td></tr>
+<tr>
+<td>0x0fa5a
+</td>
+<td>91
+</td>
+<td>.DNG filenames; 8 zero terminated strings
+</td></tr>
+<tr>
+<td>0x0fab5
+</td>
+<td>28
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x0fad1
+</td>
+<td>8
+</td>
+<td>moongate x-coordinates (one byte for each moongate starting at Moonglow)
+</td></tr>
+<tr>
+<td>0x0fad9
+</td>
+<td>8
+</td>
+<td>moongate y-coordinates (one byte for each moongate starting at Moonglow)
+</td></tr>
+<tr>
+<td>0x0fae1
+</td>
+<td>32
+</td>
+<td>16 two-byte offsets to .ULT filenames (value + 62141 gives file offset)
+</td></tr>
+<tr>
+<td>0x0fb01
+</td>
+<td>32
+</td>
+<td>area x-coordinates (one byte for each town, city, castle, dungeon, shrine)
+</td></tr>
+<tr>
+<td>0x0fb21
+</td>
+<td>32
+</td>
+<td>area y-coordinates (one byte for each town, city, castle, dungeon, shrine)
+</td></tr>
+<tr>
+<td>0x0fb41
+</td>
+<td>16
+</td>
+<td>8 two-byte offsets to stone colors (value + 62141 gives file offset)
+</td></tr>
+<tr>
+<td>0x0fb51
+</td>
+<td>16
+</td>
+<td>8 two-byte offsets to .DNG filenames (value + 62141 gives file offset)
+</td></tr>
+<tr>
+<td>0x0fb61
+</td>
+<td>72
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x0fba9
+</td>
+<td>8
+</td>
+<td>pirates cove ship x coordinates
+</td></tr>
+<tr>
+<td>0x0fbb1
+</td>
+<td>8
+</td>
+<td>pirates cove ship y coordinates
+</td></tr>
+<tr>
+<td>0x0fbb9
+</td>
+<td>8
+</td>
+<td>pirates cove ship tiles
+</td></tr>
+<tr>
+<td>0x0fbc1
+</td>
+<td>37
+</td>
+<td>zero terminated list of tiles that are walkable
+</td></tr>
+<tr>
+<td>0x0fbe6
+</td>
+<td>149
+</td>
+<td>14 zero-terminated navigation strings ("North", "Sail North", etc.)
+</td></tr>
+<tr>
+<td>0x0fc7b
+</td>
+<td>539
+</td>
+<td>Chamber of the Codex virtue questions
+</td></tr>
+<tr>
+<td>0x0fe96
+</td>
+<td>78
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x0fee4
+</td>
+<td>647
+</td>
+<td>Chamber of the Codex dialog strings
+</td></tr>
+<tr>
+<td>0x1016b
+</td>
+<td>28
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x10187
+</td>
+<td>509
+</td>
+<td>Chamber of the Codex dialog strings
+</td></tr>
+<tr>
+<td>0x10384
+</td>
+<td>83
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x103d7
+</td>
+<td>1280
+</td>
+<td>abyss question dialog strings
+</td></tr>
+<tr>
+<td>0x108d7
+</td>
+<td>22
+</td>
+<td>11 two-byte offsets to abyss question answers (value + 62141 gives file offset)
+</td></tr>
+<tr>
+<td>0x108ed
+</td>
+<td>80
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x1093d
+</td>
+<td>169
+</td>
+<td>.TLK filenames; 16 zero terminated strings
+</td></tr>
+<tr>
+<td>0x109e6
+</td>
+<td>13
+</td>
+<td>"OUTMONST.SAV" zero terminated string
+</td></tr>
+<tr>
+<td>0x109f3
+</td>
+<td>32
+</td>
+<td>16 two-byte offsets to .TLK filenames (value + 62139 gives file offset)
+</td></tr>
+<tr>
+<td>0x10a13
+</td>
+<td>659
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x10ca6
+</td>
+<td>246
+</td>
+<td>monster names; 36 zero terminated strings
+</td></tr>
+<tr>
+<td>0x10d9c
+</td>
+<td>129
+</td>
+<td>weapon names; 16 zero terminated strings
+</td></tr>
+<tr>
+<td>0x10e1d
+</td>
+<td>77
+</td>
+<td>armor names; 8 zero terminated strings
+</td></tr>
+<tr>
+<td>0x10e6a
+</td>
+<td>64
+</td>
+<td>weapon abbreviations; 16 zero terminated strings
+</td></tr>
+<tr>
+<td>0x10eaa
+</td>
+<td>55
+</td>
+<td>character class names; 8 zero terminated strings
+</td></tr>
+<tr>
+<td>0x10ee1
+</td>
+<td>58
+</td>
+<td>npc type names; 8 zero terminated strings
+</td></tr>
+<tr>
+<td>0x10f1b
+</td>
+<td>81
+</td>
+<td>reagent names; 8 zero terminated strings
+</td></tr>
+<tr>
+<td>0x10f6c
+</td>
+<td>434
+</td>
+<td>spell names; 26 zero terminated strings
+</td></tr>
+<tr>
+<td>0x1101e
+</td>
+<td>292
+</td>
+<td>castle/city/town/dungeon/shrine names; 32 zero terminated strings
+</td></tr>
+<tr>
+<td>0x11142
+</td>
+<td>11
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x1114d
+</td>
+<td>72
+</td>
+<td>36 two-byte offsets to monster names (value + 62131 gives file offset)
+</td></tr>
+<tr>
+<td>0x11195
+</td>
+<td>32
+</td>
+<td>16 two-byte offsets to weapon names (value + 62131 gives file offset)
+</td></tr>
+<tr>
+<td>0x111b5
+</td>
+<td>16
+</td>
+<td>8 two-byte offsets to armor names (value + 62131 gives file offset)
+</td></tr>
+<tr>
+<td>0x111c5
+</td>
+<td>32
+</td>
+<td>16 two-byte offsets to weapon abbreviations (value + 62131 gives file offset)
+</td></tr>
+<tr>
+<td>0x111e5
+</td>
+<td>16
+</td>
+<td>8 two-byte offsets to character class names (value + 62131 gives file offset)
+</td></tr>
+<tr>
+<td>0x111f5
+</td>
+<td>330
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x1133f
+</td>
+<td>26
+</td>
+<td>mp required for each spell (one byte per spell)
+</td></tr>
+<tr>
+<td>0x11359
+</td>
+<td>654
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x115e7
+</td>
+<td>16
+</td>
+<td>mask of which classes can use each weapon (one byte per weapon)
+</td></tr>
+<tr>
+<td>0x115f7
+</td>
+<td>8
+</td>
+<td>mask of which classes can use each type of armor (one byte per armor type)
+</td></tr>
+<tr>
+<td>0x115ff
+</td>
+<td>134
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x11685
+</td>
+<td>52
+</td>
+<td>monster hp table
+</td></tr>
+<tr>
+<td>0x116b9
+</td>
+<td>36
+</td>
+<td>monster leader types (one byte per monster type)
+</td></tr>
+<tr>
+<td>0x116dd
+</td>
+<td>36
+</td>
+<td>monster encounter size table (one byte per monster type)
+</td></tr>
+<tr>
+<td>0x11701
+</td>
+<td>2
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x11703
+</td>
+<td>16
+</td>
+<td>weapon damage list (one byte per weapon type)
+</td></tr>
+<tr>
+<td>0x11713
+</td>
+<td>8
+</td>
+<td>armor defense list (one byte per armor type)
+</td></tr>
+<tr>
+<td>0x1171b
+</td>
+<td>16
+</td>
+<td>weapon category list (one byte per weapon type; 0 = melee, 0xff = missile)
+</td></tr>
+<tr>
+<td>0x1172b
+</td>
+<td>154
+</td>
+<td>.CON filenames; 14 zero terminated strings
+</td></tr>
+<tr>
+<td>0x117c5
+</td>
+<td>28
+</td>
+<td>14 two-byte offsets to .CON filenames (value + 62131 gives file offset)
+</td></tr>
+<tr>
+<td>0x117e1
+</td>
+<td>64
+</td>
+<td>dungeon .CON filenames; 7 zero terminated strings
+</td></tr>
+<tr>
+<td>0x11821
+</td>
+<td>164
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x118c5
+</td>
+<td>12
+</td>
+<td>altar room exit destinations 0-3 = truth (north, east, south, west), 4-7 = love, 8-11 = courage
+</td></tr>
+<tr>
+<td>0x118d1
+</td>
+<td>146
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x11963
+</td>
+<td>8
+</td>
+<td>ambush monster types
+</td></tr>
+<tr>
+<td>0x1196b
+</td>
+<td>190
+</td>
+<td>miscellaneous text strings
+</td></tr>
+<tr>
+<td>0x11a29
+</td>
+<td>26
+</td>
+<td>spell reagent masks (one byte per spell)
+</td></tr>
+<tr>
+<td>0x11a43
+</td>
+<td>364
+</td>
+<td>miscellaneous text strings
+</td></tr>
+<tr>
+<td>0x11baf
+</td>
+<td>16
+</td>
+<td>city/runemask pairs (city id, corresponding rune bitmask)
+</td></tr>
+<tr>
+<td>0x11bbf
+</td>
+<td>12
+</td>
+<td>miscellaneous text string
+</td></tr>
+<tr>
+<td>0x11bcb
+</td>
+<td>120
+</td>
+<td>24 five-byte item location records (see below)
+</td></tr>
+<tr>
+<td>0x11c43
+</td>
+<td>288
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x11d63
+</td>
+<td>250
+</td>
+<td>companion dialog text
+</td></tr>
+<tr>
+<td>0x11e5d
+</td>
+<td>16
+</td>
+<td>8 two-byte offsets to virtue adjectives for companion dialogs (value + 62123 gives file offset)
+</td></tr>
+<tr>
+<td>0x11e6d
+</td>
+<td>1404
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x11f7f
+</td>
+<td>128
+</td>
+<td>16 entries of 8 bytes giving the y location of different shops (?,?,?,?,?,Healer,?,?)
+</td></tr>
+<tr>
+<td>0x123e9
+</td>
+<td>3486
+</td>
+<td>Hawkwind dialog text; the first 40 zero terminated strings are his responses for 5 levels times 8 virtues, plus some other miscellaneous dialog strings
+</td></tr>
+<tr>
+<td>0x13187
+</td>
+<td>80
+</td>
+<td>40 two-byte offsets to Hawkwind dialog strings (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x131d7
+</td>
+<td>564
+</td>
+<td>reagent vendor dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x133eb
+</td>
+<td>16
+</td>
+<td>reagent vendor index for each city (one byte per castle/city/town)
+</td></tr>
+<tr>
+<td>0x133fb
+</td>
+<td>8
+</td>
+<td>4 two-byte offsets to reagent shop names (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x13403
+</td>
+<td>8
+</td>
+<td>4 two-byte offsets to reagent shopkeeper names (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x1340b
+</td>
+<td>24
+</td>
+<td>price for each of the first six reagents at Moonglow, Skara Brae, Paws, and Buccaneers Den respectively (one byte per price)
+</td></tr>
+<tr>
+<td>0x13423
+</td>
+<td>1274
+</td>
+<td>weapon vendor dialog text; 28 zero terminated strings
+</td></tr>
+<tr>
+<td>0x1391d
+</td>
+<td>12
+</td>
+<td>6 two-byte offsets to weapon shop names (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x13929
+</td>
+<td>12
+</td>
+<td>6 two-byte offsets to weapon shopkeeper names (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x13935
+</td>
+<td>24
+</td>
+<td>which four weapons each of the six weapons vendors can sell (one byte per weapon)
+</td></tr>
+<tr>
+<td>0x1394d
+</td>
+<td>32
+</td>
+<td>price of each weapon (two bytes for each price)
+</td></tr>
+<tr>
+<td>0x1396d
+</td>
+<td>16
+</td>
+<td>weapon vendor index for each city (one byte per castle/city/town)
+</td></tr>
+<tr>
+<td>0x1397d
+</td>
+<td>28
+</td>
+<td>14 two-byte offsets to weapon descriptions (value + 62075 gives file offset) for all weapons except hands and mystic
+</td></tr>
+<tr>
+<td>0x13999
+</td>
+<td>522
+</td>
+<td>more weapon vendor dialog text; 27 zero terminated strings
+</td></tr>
+<tr>
+<td>0x13ba3
+</td>
+<td>646
+</td>
+<td>armor vendor dialog text; 19 zero terminated strings
+</td></tr>
+<tr>
+<td>0x13e29
+</td>
+<td>10
+</td>
+<td>5 two-byte offsets to armor shop names (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x13933
+</td>
+<td>12
+</td>
+<td>6 two-byte offsets to armor shopkeeper names (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x13e3f
+</td>
+<td>20
+</td>
+<td>which four types of armor each of the five armor vendors can sell (one byte per armor type)
+</td></tr>
+<tr>
+<td>0x13e53
+</td>
+<td>4
+</td>
+<td>zero padding
+</td></tr>
+<tr>
+<td>0x13e57
+</td>
+<td>16
+</td>
+<td>price of each type of armor (two bytes for each price)
+</td></tr>
+<tr>
+<td>0x13e67
+</td>
+<td>16
+</td>
+<td>armor vendor index for each city (one byte per castle/city/town)
+</td></tr>
+<tr>
+<td>0x13e77
+</td>
+<td>12
+</td>
+<td>6 two-byte offsets to armor descriptions (value + 62075 gives file offset) for all armor types except skin and mystic
+</td></tr>
+<tr>
+<td>0x13e83
+</td>
+<td>484
+</td>
+<td>more armor vendor dialog text; 27 zero terminated strings
+</td></tr>
+<tr>
+<td>0x14067
+</td>
+<td>318
+</td>
+<td>horse vendor dialog text; 7 zero terminated strings
+</td></tr>
+<tr>
+<td>0x141a5
+</td>
+<td>622
+</td>
+<td>guild vendor dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x14413
+</td>
+<td>6
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x14419
+</td>
+<td>8
+</td>
+<td>price per unit of each guild item (two bytes for each price)
+</td></tr>
+<tr>
+<td>0x14521
+</td>
+<td>8
+</td>
+<td>quantity per unit of each guild item (two bytes for each quantity)
+</td></tr>
+<tr>
+<td>0x14429
+</td>
+<td>4
+</td>
+<td>2 two-byte offsets to guild shop names (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x1442d
+</td>
+<td>4
+</td>
+<td>2 two-byte offsets to guild shopkeeper names (value + 62075 gives file offset)
+</td></tr>
+<tr>
+<td>0x14431
+</td>
+<td>8
+</td>
+<td>4 two-byte offsets to guild item inquiry responses (value + 62075 gives file offset) for torches, gems, keys, sextants
+</td></tr>
+<tr>
+<td>0x14439
+</td>
+<td>702
+</td>
+<td>inn dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x146F7
+</td>
+<td>16
+</td>
+<td>inn index for each city (one byte per castle/city/town)
+</td></tr>
+<tr>
+<td>0x14707
+</td>
+<td>8
+</td>
+<td>inn sleep location x coordinate for seven inns plus zero pad
+</td></tr>
+<tr>
+<td>0x1470f
+</td>
+<td>8
+</td>
+<td>inn sleep location y coordinate for seven inns plus zero pad
+</td></tr>
+<tr>
+<td>0x14717
+</td>
+<td>8
+</td>
+<td>inn prices for seven inns plus zero pad
+</td></tr>
+<tr>
+<td>0x1471f
+</td>
+<td>14
+</td>
+<td>7 two-byte offsets to inn names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x1472d
+</td>
+<td>14
+</td>
+<td>7 two-byte offsets to inn names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x1473b
+</td>
+<td>14
+</td>
+<td>7 two-byte offsets to inn price dialogs (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x14749
+</td>
+<td>424
+</td>
+<td>more inn dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x148f1
+</td>
+<td>266
+</td>
+<td>healer dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x149fb
+</td>
+<td>16
+</td>
+<td>healer index for each city (one byte per castle/city/town)
+</td></tr>
+<tr>
+<td>0x14a0b
+</td>
+<td>20
+</td>
+<td>10 two-byte offsets to healer shopkeeper names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x14a1f
+</td>
+<td>20
+</td>
+<td>10 two-byte offsets to healer shopkeeper names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x14b33
+</td>
+<td>598
+</td>
+<td>more healer dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x14d89
+</td>
+<td>978
+</td>
+<td>tavern dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x1515b
+</td>
+<td>16
+</td>
+<td>tavern index for each city (one byte per castle/city/town)
+</td></tr>
+<tr>
+<td>0x1516b
+</td>
+<td>12
+</td>
+<td>minimum price for information at each tavern (two bytes for each price)
+</td></tr>
+<tr>
+<td>0x15177
+</td>
+<td>12
+</td>
+<td>6 two-byte offsets to tavern shop names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x15183
+</td>
+<td>12
+</td>
+<td>6 two-byte offsets to tavern shopkeeper names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x1518f
+</td>
+<td>12
+</td>
+<td>6 two-byte offsets to tavern specialty names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x1519b
+</td>
+<td>12
+</td>
+<td>price for plate of food at each tavern (two bytes for each price)
+</td></tr>
+<tr>
+<td>0x151a7
+</td>
+<td>12
+</td>
+<td>7 two-byte offsets to tavern information topics (value + 62067 gives file offset) (??? why 7, not 6)
+</td></tr>
+<tr>
+<td>0x151b5
+</td>
+<td>12
+</td>
+<td>6 two-byte offsets to tavern information responses (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x151c1
+</td>
+<td>598
+</td>
+<td>more tavern dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x15417
+</td>
+<td>456
+</td>
+<td>food vendor dialog text; x zero terminated strings
+</td></tr>
+<tr>
+<td>0x155df
+</td>
+<td>16
+</td>
+<td>food vendor index for each city (one byte per castle/city/town)
+</td></tr>
+<tr>
+<td>0x155ef
+</td>
+<td>10
+</td>
+<td>price for 25 units of food at each vendor (two bytes for each price) for Moonglow, Britan, Yew, Skara Brae, and Paws, respectively
+</td></tr>
+<tr>
+<td>0x155f9
+</td>
+<td>10
+</td>
+<td>5 two-byte offsets to food shop names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x15603
+</td>
+<td>10
+</td>
+<td>5 two-byte offsets to food shopkeeper names (value + 62067 gives file offset)
+</td></tr>
+<tr>
+<td>0x1560d
+</td>
+<td>189
+</td>
+<td>Lord British dialog keywords; 27 zero terminated strings
+</td></tr>
+<tr>
+<td>0x156ca
+</td>
+<td>2968
+</td>
+<td>Lord British dialog text; 25 zero terminated strings ("He says", plus responses for last 24 of the above keywords)
+</td></tr>
+<tr>
+<td>0x16262
+</td>
+<td>104
+</td>
+<td>???
+</td></tr>
+<tr>
+<td>0x162ca
+</td>
+<td>2037
+</td>
+<td>Lord British "help" response dialog strings
+</td></tr>
+<tr>
+<td>0x16abf
+</td>
+<td>...
+</td>
+<td>???
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Item_Location_Record">Item Location Record</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=35" title="Edit section: Item Location Record">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Each item location record has the following structure:
+</p>
+<table border="1" cellpadding="2">
+<tbody><tr>
+<th>Offset
+</th>
+<th>Length (in bytes)
+</th>
+<th>Purpose
+</th></tr>
+<tr>
+<td>0x0
+</td>
+<td>1
+</td>
+<td>Item Location (same encoding as party location in PARTY.SAV, e.g. 0 for surface)
+</td></tr>
+<tr>
+<td>0x1
+</td>
+<td>1
+</td>
+<td>X Coordinate of Item
+</td></tr>
+<tr>
+<td>0x2
+</td>
+<td>1
+</td>
+<td>Y Coordinate of Item
+</td></tr>
+<tr>
+<td>0x3
+</td>
+<td>2
+</td>
+<td>pointer to function that handles picking up the item
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="External_Links">External Links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit&amp;section=36" title="Edit section: External Links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a rel="nofollow" class="external text" href="http://www.oocities.com/xenerkes/En/Techfile/TechFiles.htm">Xenerkes' Ultima website</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.moongates.com/u4/Tech.asp">More technical information</a></li>
+<li><a rel="nofollow" class="external text" href="http://xu4.cvs.sourceforge.net/viewvc/xu4/u4/doc/FileFormats.txt?revision=1.37.2.1&amp;view=markup">Original version of this article</a>.</li></ul>
+<hr style="margin-top:1em; margin-bottom:1em; clear:both;">
+<table style="height: auto; text-align: center; border-top: thin solid black; border-bottom: thin solid black; padding: 0.25em 0em 0.25em 0.25em; margin: 1em auto 1em auto; vertical-align: top; font-size:90%; background: white;" align="center">
+
+<tbody><tr>
+<th colspan="2" style="background: #afa; font-size:120%;padding:2px;"><a href="https://wiki.ultimacodex.com/wiki/Category:Technical_Details" title="Category:Technical Details">Technical Details</a>
+</th></tr>
+<tr>
+<th style="width:130px">Game
+</th>
+<td style="padding:2px;"><a href="https://wiki.ultimacodex.com/wiki/Ultima_III_internal_formats" title="Ultima III internal formats"><i>Ultima&nbsp;III</i></a> ☥ <a class="mw-selflink selflink"><i>Ultima&nbsp;IV</i></a> ☥ <a href="https://wiki.ultimacodex.com/wiki/Ultima_V_internal_formats" title="Ultima V internal formats"><i>Ultima&nbsp;V</i></a> ☥ <a href="https://wiki.ultimacodex.com/wiki/Ultima_VI_internal_formats" title="Ultima VI internal formats"><i>Ultima&nbsp;VI</i></a> ☥ <a href="https://wiki.ultimacodex.com/wiki/Ultima_VII_internal_formats" title="Ultima VII internal formats"><i>Ultima&nbsp;VII</i></a> ☥ <a href="https://wiki.ultimacodex.com/wiki/Ultima_VIII_internal_formats" title="Ultima VIII internal formats"><i>Ultima&nbsp;VIII</i></a> ☥ <a href="https://wiki.ultimacodex.com/wiki/Ultima_IX_internal_formats" title="Ultima IX internal formats"><i>Ultima&nbsp;IX</i></a> ☥ <a href="https://wiki.ultimacodex.com/wiki/Ultima_Underworld_internal_formats" title="Ultima Underworld internal formats"><i>Ultima Underworld</i></a>
+</td></tr></tbody></table>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#cite_ref-1" aria-label="Jump up" title="Jump up">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://github.com/ergonomy-joe/u4-decompiled/blob/master/SRC-TITLE/TITLE_1.C#L757">https://github.com/ergonomy-joe/u4-decompiled/blob/master/SRC-TITLE/TITLE_1.C#L757</a></span>
+</li>
+</ol></div>
+<!--
+NewPP limit report
+Cached time: 20220427035416
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+[SMW] In‐text annotation parser time: 0 seconds
+CPU time usage: 0.494 seconds
+Real time usage: 1.131 seconds
+Preprocessor visited node count: 211/1000000
+Post‐expand include size: 1185/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 18230/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  823.050      1 -total
+  5.14%   42.334      1 Template:Internal
+  0.89%    7.307      4 Template:Ultima_IV
+  0.75%    6.209      1 Template:Ultima_III
+  0.67%    5.475      1 Template:U4link
+  0.62%    5.114      1 Template:Ultima_V
+  0.62%    5.113      1 Template:Ultima_VI
+  0.60%    4.909      1 Template:Ultima_VII
+  0.57%    4.702      1 Template:Ultima_Underworld
+  0.57%    4.698      1 Template:Ultima_VIII
+-->
+
+<!-- Saved in parser cache with key spamspam_mediawiki-ec_:pcache:idhash:2870-0!canonical and timestamp 20220427035415 and revision id 163531
+ -->
+</div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;oldid=163531">https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;oldid=163531</a>"</div>
+<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.ultimacodex.com/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://wiki.ultimacodex.com/wiki/Category:Ultima_IV" title="Category:Ultima IV">Ultima IV</a></li><li><a href="https://wiki.ultimacodex.com/wiki/Category:Technical_Details" title="Category:Technical Details">Technical Details</a></li></ul></div></div><!-- end content --><div class="visualClear"></div></div></div><div class="visualClear"></div></div><div id="column-one" lang="en" dir="ltr"><h2>Navigation menu</h2><div role="navigation" class="portlet" id="p-cactions" aria-labelledby="p-cactions-label"><h3 id="p-cactions-label" lang="en" dir="ltr">Page actions</h3><div class="pBody"><ul lang="en" dir="ltr"><li id="ca-nstab-main" class="selected"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats" title="View the content page [alt-shift-c]" accesskey="c">Page</a></li><li id="ca-talk"><a href="https://wiki.ultimacodex.com/wiki/Talk:Ultima_IV_internal_formats" rel="discussion" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></li><li id="ca-edit"><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=edit" title="Edit this page [alt-shift-e]" accesskey="e">Edit</a></li><li id="ca-history"><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">History</a></li></ul></div></div><div role="navigation" class="portlet" id="p-cactions-mobile" aria-labelledby="p-cactions-mobile-label"><h3 id="p-cactions-mobile-label" lang="en" dir="ltr">Page actions</h3><div class="pBody"><ul lang="en" dir="ltr"><li id="ca-nstab-main-mobile" class="selected"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats" title="Page">Page</a></li><li id="ca-talk-mobile"><a href="https://wiki.ultimacodex.com/wiki/Talk:Ultima_IV_internal_formats" rel="discussion" title="Discussion">Discussion</a></li><li id="ca-more"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#p-cactions">More</a></li><li id="ca-tools"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#p-tb" title="Tools">Tools</a></li><li id="ca-languages"><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#p-lang" title="In other languages">In other languages</a></li></ul></div></div><div role="navigation" class="portlet" id="p-personal" aria-labelledby="p-personal-label"><h3 id="p-personal-label" lang="en" dir="ltr">Personal tools</h3><div class="pBody"><ul lang="en" dir="ltr"><li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://wiki.ultimacodex.com/wiki/Special:MyTalk" title="Discussion about edits from this IP address [alt-shift-n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://wiki.ultimacodex.com/wiki/Special:MyContributions" title="A list of edits made from this IP address [alt-shift-y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://wiki.ultimacodex.com/index.php?title=Special:CreateAccount&amp;returnto=Ultima+IV+internal+formats" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.ultimacodex.com/index.php?title=Special:UserLogin&amp;returnto=Ultima+IV+internal+formats" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li></ul></div></div><div class="portlet" id="p-logo" role="banner"><a href="https://wiki.ultimacodex.com/wiki/Main_Page" class="mw-wiki-logo" title="Visit the main page"></a></div><div id="sidebar"><div role="navigation" class="portlet generated-sidebar" id="p-Navigation" aria-labelledby="p-Navigation-label"><h3 id="p-Navigation-label" lang="en" dir="ltr">Navigation</h3><div class="pBody"><ul lang="en" dir="ltr"><li id="n-mainpage"><a href="https://wiki.ultimacodex.com/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main Page</a></li><li id="n-Games"><a href="https://wiki.ultimacodex.com/wiki/Games">Games</a></li><li id="n-Characters"><a href="https://wiki.ultimacodex.com/wiki/Category:NPCs">Characters</a></li><li id="n-Geography"><a href="https://wiki.ultimacodex.com/wiki/Category:Geography">Geography</a></li><li id="n-Books"><a href="https://wiki.ultimacodex.com/wiki/Category:Books">Books</a></li><li id="n-Trinkets"><a href="https://wiki.ultimacodex.com/wiki/Category:Trinkets">Trinkets</a></li><li id="n-Maps"><a href="https://wiki.ultimacodex.com/wiki/Category:Maps">Maps</a></li><li id="n-Bestiary"><a href="https://wiki.ultimacodex.com/wiki/Bestiary">Bestiary</a></li><li id="n-Fan-works"><a href="https://wiki.ultimacodex.com/wiki/Category:Fan_works">Fan works</a></li><li id="n-randompage"><a href="https://wiki.ultimacodex.com/wiki/Special:Random" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li></ul></div></div><div role="navigation" class="portlet generated-sidebar" id="p-Community" aria-labelledby="p-Community-label"><h3 id="p-Community-label" lang="en" dir="ltr">Community</h3><div class="pBody"><ul lang="en" dir="ltr"><li id="n-The-Ultima-Codex"><a href="http://www.ultimacodex.com/" rel="nofollow">The Ultima Codex</a></li><li id="n-SotAWiki"><a href="http://sotawiki.net/sota/Main_Page" rel="nofollow">SotAWiki</a></li><li id="n-Ultima-Forever-Wiki"><a href="http://wiki.ultimacodex.com/forever/Main_Page" rel="nofollow">Ultima Forever Wiki</a></li><li id="n-Ultima-Online-Wiki"><a href="http://www.uoguide.com/Main_Page" rel="nofollow">Ultima Online Wiki</a></li><li id="n-portal"><a href="https://wiki.ultimacodex.com/wiki/Ultima_Codex:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://wiki.ultimacodex.com/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="https://wiki.ultimacodex.com/wiki/Help:Contents" title="The place to find out">Help</a></li><li id="n-Forum"><a href="https://wiki.ultimacodex.com/wiki/Forum:Index">Forum</a></li><li id="n-Create-new-page"><a href="https://wiki.ultimacodex.com/wiki/Ultima_Codex:CreateNewPage">Create new page</a></li></ul></div></div><div role="navigation" class="portlet" id="p-tb" aria-labelledby="p-tb-label"><h3 id="p-tb-label" lang="en" dir="ltr">Tools</h3><div class="pBody"><ul lang="en" dir="ltr"><li id="t-whatlinkshere"><a href="https://wiki.ultimacodex.com/wiki/Special:WhatLinksHere/Ultima_IV_internal_formats" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.ultimacodex.com/wiki/Special:RecentChangesLinked/Ultima_IV_internal_formats" rel="nofollow" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.ultimacodex.com/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;oldid=163531" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.ultimacodex.com/index.php?title=Ultima_IV_internal_formats&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="https://wiki.ultimacodex.com/wiki/Special:Browse/:Ultima-5FIV-5Finternal-5Fformats" rel="search">Browse properties</a></li></ul></div></div><div role="search" class="portlet" id="p-search"><h3 id="p-search-label" lang="en" dir="ltr"><label for="searchInput">Search</label></h3><div class="pBody" id="searchBody"><form action="https://wiki.ultimacodex.com/index.php" id="searchform"><input type="hidden" value="Special:Search" name="title"><input type="search" name="search" placeholder="Search Ultima Codex" title="Search Ultima Codex [alt-shift-f]" accesskey="f" id="searchInput"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton">&nbsp; <input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"></form></div></div></div><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#sidebar" title="navigation" class="menu-toggle" id="sidebar-toggle"></a><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#p-personal" title="user tools" class="menu-toggle" id="p-personal-toggle"></a><a href="https://wiki.ultimacodex.com/wiki/Ultima_IV_internal_formats#globalWrapper" title="back to top" class="menu-toggle" id="globalWrapper-toggle"></a></div><!-- end of the left (by default at least) column --><div class="visualClear"></div><div id="footer" class="mw-footer" role="contentinfo" lang="en" dir="ltr"><div id="f-copyrightico" class="footer-icons"><a href="https://creativecommons.org/licenses/by-sa/3.0/"><img src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/88x31.png" alt="Attribution-ShareAlike 3.0 Unported" width="88" height="31" loading="lazy"></a></div><div id="f-poweredbyico" class="footer-icons"><a href="https://www.mediawiki.org/"><img src="./Ultima IV internal formats - The Codex of Ultima Wisdom, a wiki for Ultima and Ultima Online_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"></a><a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAACJVBMVEXe3t62trbLy8vGxsbAwMDX19e6urqsrKxHcEzQ0NC2tratra2oqKixsbHd3eDFxcXe3t7U1NTa2trX19fQ0NDV1dWNjY2dnZ2UlJSUlJTS0tKUlJSWlpbR0dGenp79/f38/Pz+/v7t7e3v7+/u7u7s7Oz19fX29vb6+vr7+/vz8/Pz8/P4+fnw8PD39/gWTq/09PX6+vktX7b/sg8XT7F6mc/f5OwhVrNvkMthhsfT2+j7rQ/M1eZqjcmFotPs7e9Cb722xuFResK/zOObstnu7/Grvd3M1+mNqNY6aLoaUbEaUbZWfsTk6fE2Zrnp7O8bTq0kWLQuYcpcg8Xh5/Byk83a4eukud1/nM+6yeQkWcGwwuDxnRQyYrigttvI0+gpW7XGyttLdsBni8geVLo0Z9XlkCPb4u+QqtcfVLLo7PNHcr73phFGX6HsmBnpkxg6bNwnXcbX3er19vnr7/SVrdhuhLl+j70vVqY6Xqv0oxJVcbQhV76DjKTz9ffQ2evE0OZAbbzu7/PS1uFufrDnrGgpSZjy8/SQnMFddrKuekXSiCsgTKRaaZHejy9yang3VptNaqspWbnmliy3j2/m6OzT3e7x8fL4+v3p6uwaN2re0cifqLiLiZWYhYGYb0xXYn+5g0xwiMKYpc2BcHZmW2srRXpGWIhecKfilz4+WID2+PyosMywqbGqss1aVnLZq33p1sGklZqrp7dkfr7CpY9yg59Ud6QZAAAAH3RSTlPfBN/f39/f2wDf39vV3/7N2rrEz5D5c8ONuHaPuXXDImoxqwAABO1JREFUSMe1kQdz01gQgBXaBS4w9OtHwMFSdPKTUNxkW+61xN2Je4tLHJNOGukkAUINJTzaUIbO9fr7TpLtS44DZiC5b6Sn3dW+TysJaWz4cv9eZFPZu/+bhkakYR88WqP59u3vjxzdDCT7GpCD4qNH3sEGzOhB5MCR/4PmA8j25uZ33t0A23lxff5hZTIzOrz2Ph8qK936l7i1tT7hk8DAoHNsbeLWKjPdQcZ+qvX9tHMNXca1XBDXHtL6x2Bh0HWtuXUo8oTgC1gVpcdsdpew92PUYtjwzFq+E9mJYfXxx1x5l2/l5Vhy0DW6TuyQCZcR2hnswXJM0h+203471u5WKMIE5mDpspIIO8sZTMZiIbczY6+JCaI+/sJZ38qjP28+nQjkx/mcqGJ26rW3iKg/fYphCL1jNk5WbqXI0nBnu00RJ2j9bNRp6MmFS0SYIXLuUlQ5w22qizHr5MTyy2u/3XxVvHHlwtWVa/xTCQIIlEaMzrgswzA5P9BrAciYASqNoiNdjL8b0GYAHN3AGAEgzPSQc9UtYCeyBQAMO2G9PhhzXfp9qdifSCT6Lj788QQnrvWEuNPI2um0LW0D+m4A6E4AnIZOeq7ksQuJvi6eUXRW+8EWXsxNPhkYGJiSXr7Rd1qtVp9MXHkgIurzAkdFxjrj7cmKbN4K5v8RGxT2sJMTpwBflNHhUJgBdoUylzy3TuwIDBRi0hf9p9VtbW3qk30X7q2Je1IybZq7mLVWFKTSADXPoqi9AzVorda0kKTS6KkRbSgaR1GT1h5CObYiW1GU27yc5z6F9Fn/yTYedeLi9AIA6AbgxGIxAMPZcZeUHH9cFavVfY97FaNA/DbazRZVV89/61at2BTlg1JXiFtrYoBmRyd7p6/UP0XxaSDmy4pt0jmuh8qx6wQ2MmRz18TaJCUWO9xisUVhMMsoZZDiGHLLuXUbso2iatP/1HvhYu3n3bh6Pe/LUjZSj1NUJ8lSlNwahRRlMRjmyFDICikVn8+SacomdbZTVj+0mQSxweS1WqpiHK/Ncubs858f9idOJ/qKS1cv+RbFuIbMmHEvTbO4QeF25CxyD62nSbmJ1MUzRrpiwR0RPBJMpnCGxWVGXBn8TkarNGQHjuPrxOeWY4GY9FmxWHy19Gvv+ayYF6f8oYi7i8U93bjFkYokvbhWEFu8Og2ZxrUe3NMpc3vLhqqYpVV4XbwDQkpgoVwYKOR9N5d+eXB5vJevQA0pD7oVqi4WOj16vX6EYSA08WKvyeOZJw1cQ6rsnXOa/RYoM0Kls0zLuVoHhHAHL8YFXkwVCoE8uXhvMVCY8mW5Ci8eKkcgJ9azOl0UajNDFiUpj5JeloEqTgwd/iCUJP0sFMSejkpO96b4zl1fPuYiyd6Vs4GBmHSsJoYmLy/WeBTlis5rlJYrgjhe1s+XOXGEtHJOMl4VB2EHLauKdyG7JBLIc//uslRKkhOrcGJqyiU9z5UkOpVOwiGXSyQizRAfqlRc7Y5KJFnV6FReiWSV7xAWeQd/SOSq6qY18eVHq4vjlyazEJ73ScmJPVxJVKdF9MFwYpFIEL+ehvDOcSH8YXRsAa4XfwS7kd0tLfw7Sp7fl7xJywbYjTTVotfTb+849lEcb0K+2lMN/5o+tons+Rxp+PrQ8U3n0BcNSGPj4W+bPuX5ZLNo+uxwY+PfoLJHX1KXgyMAAAAASUVORK5CYII=" alt="Powered by Semantic MediaWiki" class="smw-footer" width="88" height="31" loading="lazy"></a></div><ul id="f-list"><li id="lastmod"> This page was last edited on 14 March 2022, at 21:31.</li><li id="copyright">Content is available under <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike 3.0 Unported</a> unless otherwise noted.</li><li id="privacy"><a href="https://wiki.ultimacodex.com/wiki/Ultima_Codex:Privacy_policy" title="Ultima Codex:Privacy policy">Privacy policy</a></li><li id="about"><a href="https://wiki.ultimacodex.com/wiki/Ultima_Codex:About" title="Ultima Codex:About">About Ultima Codex</a></li><li id="disclaimer"><a href="https://wiki.ultimacodex.com/wiki/Ultima_Codex:General_disclaimer" title="Ultima Codex:General disclaimer">Disclaimers</a></li></ul></div></div>
+</body></html>
