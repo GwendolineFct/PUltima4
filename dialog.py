@@ -1,5 +1,5 @@
 from file_io import DosFile
-
+from handlers import EventHandler
 
 class Dialog:
     question_flag: int
@@ -40,5 +40,6 @@ class Dialog:
         dialog.keyword1 = tlk_file.read_asciiz()
         dialog.keyword2 = tlk_file.read_asciiz()
 
-    def handle_event(self):
-        pass
+
+class DialogHandler(EventHandler):
+    pass

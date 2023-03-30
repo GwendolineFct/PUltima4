@@ -25,6 +25,7 @@ class AvatarExe:
         self.walkable_tiles = bin.read_n_bytes(37, 0x0fbc1)
         self.location_types = bin.read_n_asciiz(6, 0x10a27)
         self.virtue_names = bin.read_n_asciiz(8, 0x110fb)
+
 avatar_exe: AvatarExe = None
 
 def load_avatar_exe():

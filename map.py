@@ -1,4 +1,4 @@
-import globals
+import binaries
 from constants import *
 from file_io import read_file
 
@@ -46,7 +46,7 @@ class Mobile:
         if dest_tile in (TILE_TOWN, TILE_VILLAGE, TILE_CASTLE, TILE_SHRINE, TILE_LCB_WEST, TILE_LCB_EAST, TILE_LCB_ENTRANCE, TILE_RUINS, TILE_MOONGATE_1, TILE_MOONGATE_2, TILE_MOONGATE_3, TILE_MOONGATE_4):
             return False
 
-        if dest_tile in globals.avatar_exe.walkable_tiles:
+        if dest_tile in binaries.avatar_exe.walkable_tiles:
             return True
 
         if TILE_DRAGON_1 <= self.tile and dest_tile <= TILE_SHALLOW_WATER:

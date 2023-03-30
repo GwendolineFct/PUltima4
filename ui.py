@@ -88,10 +88,34 @@ class Console(TextArea):
 
     def __init__(self, width, height):
         TextArea.__init__(self, width, height)
-        self.prompting = True
+        self.prompt_x = 0
+        self.prompt_y = 0
+        self.showing_cursor = False
+
+    def backspace(self):
+        if self.cursor_x != self.prompt_x or self.cursor_y != self.prompt_y:
+            if self.cursor_x > 0:
+                self.cursor_x -= 1
+            else:
+                self.cursor_x = self.width - 1
+                self.cursor_y -= 1
+        return self
+
+    def scroll(self):
+        super().scroll()
+        if self.prompt_y > 0:
+            self.prompt_y -= 0
+        return self
 
     def prompt(self):
-        self.print(chr(16))
+        self.prompt_x = self.cursor_x
+        self.prompt_y = self.cursor_y
+        self.showing_cursor = True
+        return self
+
+    def hide_cursor(self):
+        self.showing_cursor = False
+        return self
 
     def animate(self):
         self.cursor -= 1
@@ -102,7 +126,7 @@ class Console(TextArea):
 
     def render(self, surface: Surface, x: int, y: int):
         super().render(surface, x, y)
-        if self.prompting:
+        if self.showing_cursor:
             dx = x + self.cursor_x * graphics.charset.char_width
             dy = y + self.cursor_y * graphics.charset.char_height
             gfx_draw_char(surface, dx, dy, self.cursor)

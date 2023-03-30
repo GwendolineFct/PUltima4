@@ -8,7 +8,7 @@ from avatar import Avatar
 from event import KeyEvent, MouseEvent
 from graphics import gfx_animate_shapes, gfx_init
 
-from globals import *
+from binaries import *
 
 pygame.init()
 gfx_init()
